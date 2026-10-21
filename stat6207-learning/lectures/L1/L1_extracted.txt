@@ -1,0 +1,666 @@
+
+=====PAGE 1=====
+STAT6207 
+Applied Deep Learning
+11 Sept 2026
+By Dr. Ming Cheung
+1
+[IMAGES] 3
+
+=====PAGE 2=====
+Agenda
+• Course Introduction
+• What are machine learning
+• Supervised Learning and KNN
+3
+[IMAGES] 2
+
+=====PAGE 3=====
+What is STAT6207
+1. Learn the theory of machine learning and deep learning;
+2. Understand machine learning applications to solve real problems in generative 
+adversarial networks, large language model, etc.;
+3. Gain hands on experience through projects and activities using agentic coders and 
+Python libraries, such as OpenCode, PyTorch and Numpy, with projects
+4
+Theory
+Application
+Hands on
+[IMAGES] 2
+
+=====PAGE 4=====
+Prerequisite/Background 
+• Mathematics: multivariable calculus, linear algebra and probability
+• Coding: OpenCode, Python and NumPy, probability and machine learning.
+• Course material and other information will be posted on Blackboard
+• Pre-slide for the week will be released every Wednesday
+5
+[IMAGES] 2
+
+=====PAGE 5=====
+Policy on Generative AI
+• You are permitted to use generative AI (e.g., ChatGPT, Claude, Grok, etc.) and 
+the Agentic Coder (i.e., OpenCode), in assignments, programming exams, 
+and projects
+• When generative AI is used to produce code, text, or reports, students must 
+transparently declare its use by including an appendix for grading:
+• A shareable link to the conversation(s) with the AI (including all prompts and AI-
+generated outputs), if web-based AI is used.
+• In case of using agentic coders, the session transcript must be submitted.
+• A detailed description of all modifications made to the AI-generated content.
+• Do not use it to skip learning
+6
+[IMAGES] 2
+
+=====PAGE 6=====
+My expectations in Teaching
+• Please ask me questions about the materials, and feel free to ask me any 
+time even during my presentation
+• Discussion is part of the learning; you are welcome to discuss your 
+challenges with me during the breaks and after classes. You don't learn to 
+swim by reading about water.
+• Agentic Coders and LLM are tools for build, but you should spend the time to 
+understand the concepts and build them
+7
+[IMAGES] 2
+
+=====PAGE 7=====
+8
+Course Introduction
+[IMAGES] 4
+
+=====PAGE 8=====
+Marking Scheme (Final Project)
+Format: 1 presentation and 1 report
+Data processing and Methods
+• apply what you have learned or any techniques on the data to achieve the expected results
+• state clearly what methodology or algorithms you used and how you used them to process the data in your report
+Experimental results
+• state clearly your result in your report.
+• You use tables, graphs, charts or other visualization methods to demonstrate your conclusion.
+• You draw interesting conclusions/insights from your results.
+Presentation and Organization
+• Your report is organized in a way that is logical and easy for the reader to understand
+• The overall language you used in your report should be concise and able to clearly convey your idea.
+• Only selected groups will present their works to the guests.
+9
+[IMAGES] 2
+
+=====PAGE 9=====
+Last Semester Reports
+10
+[IMAGES] 5
+
+=====PAGE 10=====
+Last Semester Grading
+11
+[IMAGES] 4
+
+=====PAGE 11=====
+Course Topics (To be confirmed)
+12
+Lecture
+Topics
+1-2
+ML Foundations (Supervised Learning, KNN, Transfer Learning & ResNet)
+3-4
+LLM, Architectures & Efficiency (RAG, CoT, Agentic AI, Transformers, Quantization, etc.)
+5-6
+Computer Vision & Multimodal AI (CNNs, Vision Transformers, Visual Encoders, VLMs & Face 
+Recognition Demos)
+7
+Examination
+8-10
+Deep Learning Core & Unsupervised Learning (Embeddings, Autoencoders, Clustering, GNNs, 
+Backprop, Optimizers & Deployment)
+11-12
+Generative AI, RL & Advanced Paradigms (GANs, Stable Diffusion, Federated Learning & 
+Reinforcement Learning Reward Models)
+13
+Ethics, Course Review & Future Horizons (Bias, Ethics, Course Review)
+14  
+Project Presentation 
+[IMAGES] 2
+
+=====PAGE 12=====
+Course Topics compare to 2025
+• Added in 2026
+• More on Agentic AI and the use of OpenCode
+• LLM-based clustering
+• KV caches, MoE, quantization & mix-precision
+• Using Local LLMs (e.g., Qwen, Gemma) for deep learning applications
+13
+[IMAGES] 2
+
+=====PAGE 13=====
+Agenda
+• Course Introduction
+• What are machine learning
+• Supervised Learning and KNN
+14
+[IMAGES] 2
+
+=====PAGE 14=====
+What is Machine Learning
+15
+How do you tell if they are dogs or cats?
+How do you tell if they are bananas or apples?
+• Classification
+• Regression
+[IMAGES] 6
+
+=====PAGE 15=====
+• Using a straight line equation 
+as the separator.
+• Variables: 𝑥and 𝑦
+• Constants: 𝑚and 𝑐
+• On graph: 
+• 𝑚= gradient
+• 𝑐= y-axis intercept
+16
+What is Machine Learning - Classification
+𝑦= 𝑚𝑥+ 𝑐
+△𝑦
+△𝑥
+x
+y
+[IMAGES] 3
+
+=====PAGE 16=====
+What is Machine Learning
+• What should the driver do?
+17
+[IMAGES] 3
+
+=====PAGE 17=====
+What is Machine Learning - labeling
+• Where do you want to car to go?
+18
+[IMAGES] 4
+
+=====PAGE 18=====
+What is Machine Learning
+19
+[IMAGES] 3
+
+=====PAGE 19=====
+Machine Learning vs. Deep Learning (Video)
+Introduction to Deep Learning: Machine Learning vs. Deep Learning
+20
+[IMAGES] 4
+
+=====PAGE 20=====
+What is Deep Learning
+•
+“Deep” refers to the layered 
+model architectures which are 
+usually deeper than 
+conventional learning models
+•
+Human brain has much 
+deeper layered architecture 
+with increasing levels of 
+abstraction
+21
+[IMAGES] 3
+
+=====PAGE 21=====
+GPU vs. CPU
+22
+[IMAGES] 3
+
+=====PAGE 22=====
+What is Machine Learning - Regression
+23
+• Goal: Find an equation that fits the data
+• Using a predefined function 
+Feature 1
+Feature 2
+Feature 1
+Feature 2
+[IMAGES] 3
+
+=====PAGE 23=====
+What is Machine Learning
+• Data Collections
+• Training & Visualization
+• Deployment & Fine-tuning
+24
+[IMAGES] 3
+
+=====PAGE 24=====
+What is the best m and c?
+25
+𝑦= 𝑚𝑥+ 𝑐
+△𝑦
+△𝑥
+x
+y
+[IMAGES] 3
+
+=====PAGE 25=====
+What is Machine Learning - Classification
+26
+How to get the best classification result with least error (the peak)?
+The best 𝑚
+and 𝑐are here
+You are here
+[IMAGES] 3
+
+=====PAGE 26=====
+Training – following the slope
+27
+[IMAGES] 3
+
+=====PAGE 27=====
+What is Machine Learning - Classification
+28
+• You start somewhere and you want to reach the peak (least error)
+• How’s about the data?
+m
+c
+m
+c
+[IMAGES] 2
+
+=====PAGE 28=====
+Training – following the slope
+29
+[IMAGES] 4
+
+=====PAGE 29=====
+Gradient Descent
+30
+[IMAGES] 3
+
+=====PAGE 30=====
+Gradient Descent
+31
+[IMAGES] 3
+
+=====PAGE 31=====
+Deep Learning: TensorFlow Playground
+Try deep learning on a browser: http://playground.tensorflow.org/
+32
+[IMAGES] 3
+
+=====PAGE 32=====
+History of Machine Learning (1950s-1960s)
+• The Dartmouth Workshop (1956): brought together researchers who aimed 
+to simulate human intelligence using computers. 
+• Early Neural Networks: developed the concept of perceptrons, which were 
+basic artificial neurons capable of learning. However, perceptrons had 
+limitations, and interest in neural networks declined due to their inability to 
+solve complex problems.
+33
+[IMAGES] 4
+
+=====PAGE 33=====
+History of Machine Learning (1960s-1980s)
+• Symbolic AI and Expert Systems: using explicit rules and logic to solve 
+problems with knowledge bases and reasoning engines
+• The Backpropagation Algorithm (1986): The backpropagation algorithm, 
+developed by Geoffrey Hinton, David Rumelhart, and Ronald Williams, 
+allowed for efficient training of multi-layered neural networks
+34
+[IMAGES] 3
+
+=====PAGE 34=====
+History of Machine Learning (1990s- 2010s)
+• Support Vector Machines (SVMs): popular for classify data by finding optimal 
+decision boundaries. 
+• Rise of Big Data and Data-Driven Approaches: led to increased interest in 
+data-driven approaches, such as decision trees, random forests, and 
+ensemble methods.
+• Deep Learning and Neural Networks: multiple layers, achieved remarkable 
+success in various domains, including computer vision, natural language 
+processing, and speech recognition.
+35
+[IMAGES] 2
+
+=====PAGE 35=====
+History of Machine Learning (2010 – 2020)
+• ImageNet Breakthrough (AlexNet): won the ImageNet competition by a wide 
+margin using a Convolutional Neural Network (CNN) trained on GPUs. This 
+event catalyzed the modern deep learning boom and shifted computer 
+vision away from hand-engineered features.
+• Generative Adversarial Networks (GANs):  a generator network against a 
+discriminator network in a zero-sum game framework, enabling realistic 
+image synthesis and data augmentation.
+• The Transformer Architecture: by replacing recurrent structures with multi-
+head self-attention mechanisms, Transformers enabled massive 
+parallelization during training and became the foundational architecture for 
+modern NLP and vision.
+36
+[IMAGES] 2
+
+=====PAGE 36=====
+History of Machine Learning (2020+)
+• OpenAI introduced GPT-3 (175 billion parameters), demonstrating that 
+scaling autoregressive Transformer models enables strong few-shot and 
+zero-shot learning capabilities across diverse language tasks without task-
+specific fine-tuning.
+• Denoising Diffusion Probabilistic Models (DDPMs) surpassed GANs in visual 
+generation quality. Systems like Latent Diffusion (Stable Diffusion) made 
+high-fidelity text-to-image synthesis efficient and accessible.
+• OpenAI released ChatGPT, pairing Large Language Models with 
+Reinforcement Learning from Human Feedback (RLHF). This unlocked highly 
+coherent instruction-following and conversational interactions, triggering 
+widespread enterprise and consumer adoption.
+37
+[IMAGES] 2
+
+=====PAGE 37=====
+History of Machine Learning (2020+)
+• Machine learning shifted toward natively multimodal architectures capable 
+of processing text, vision, audio, and code simultaneously. Advances in 
+reasoning-focused architectures, Mixture of Experts (MoE), parameter-
+efficient fine-tuning (PEFT)
+• Agentic Workflow: Decomposes complex tasks via chain-of-thought, tree-of-
+thought, or self-reflection loops to correct errors dynamically. Implemented 
+the capacity to execute external tools including code interpreters, web 
+search, API endpoints, databases, and filesystem operations.
+38
+[IMAGES] 2
+
+=====PAGE 38=====
+History of Machine Learning
+39
+Federated learning
+Reinforcement Learning
+Generative AI
+Large language model
+[IMAGES] 6
+
+=====PAGE 39=====
+Agentic AI
+40
+[IMAGES] 3
+
+=====PAGE 40=====
+Agenda
+• Course Introduction
+• What are machine learning
+• Supervised Learning and KNN
+41
+[IMAGES] 2
+
+=====PAGE 41=====
+Learning a Class from Examples 
+• Goal: Identify family cars from all cars. Class 1- family cars; Class 0- others
+• Feature engineering: find features shared by all class 1 but not class 0. 
+• Prediction: is the car 𝑥(not in training data) a family car? 
+• Represent each car 𝑥as a feature vector 𝑥=
+𝑥1, 𝑥2, … , 𝑥𝑛𝑇
+• e.g., 𝑥1 = price, 𝑥2 = engine power. 
+42
+[IMAGES] 3
+
+=====PAGE 42=====
+Training Set 𝑆𝑡𝑟𝑎𝑖𝑛
+• A set of 𝑛examples: 
+𝑆𝑡𝑟𝑎𝑖𝑛=
+𝑥1, 𝑦1 , … , (𝑥𝑛, 𝑦𝑛)
+• Each 𝑥𝑖, 𝑦𝑖is a car
+• Feature vector (2 features): 
+𝑥𝑖= (𝑓𝑖1, 𝑓𝑖2)
+• Class label:
+• 𝑦= ቊ1
+for famil𝑦𝑐𝑎𝑟𝑠(+)
+0
+for others −
+43
+[IMAGES] 3
+
+=====PAGE 43=====
+Hypothesis Class C
+• The rectangle corresponds to a model 
+(a.k.a. hypothesis) specified by 4 points: 
+(𝑝1, 𝑒1), (𝑝2, 𝑒1), (𝑝1, 𝑒2) and (𝑝2, 𝑒2)
+• The learning algorithm finds a hypothesis 
+ℎto approximate the class C as closely as 
+possible. 
+• Make sure that the hypothesis class H is 
+flexible enough (or has enough capacity) 
+to learn C , i.e., to find ℎthat is as similar 
+as possible to C. 
+44
+[IMAGES] 3
+
+=====PAGE 44=====
+Noise and Model Complexity 
+• Sources of noise:
+• Measurement (input)
+• Labelling (output)
+• Hidden attributes
+• Simple rectangle (linear) model is preferred
+• Simpler to use with lower computational complexity
+• Easier to train with lower space complexity
+• Easier to explain with higher interpretability
+• Better generalization with lower variance (Occam’s razor)
+45
+[IMAGES] 3
+
+=====PAGE 45=====
+46
+Sports car
+Luxury sedan
+Family car
+Price
+Engine Power
+?
+?
+[IMAGES] 2
+
+=====PAGE 46=====
+Process of Training
+• Build and train a model with only Training data, and measure the 
+performance with the validation data
+• For different hyperparameters / models, measure the performance with the 
+validation data
+• With the best hyperparameters / models, measure using testing data (in this 
+course, it is the submission)
+47
+[IMAGES] 2
+
+=====PAGE 47=====
+Training, Testing and Validation Sets
+48
+(Text book)
+(Homework)
+(Public exam)
+[IMAGES] 3
+
+=====PAGE 48=====
+Process of Training
+• Training set: drops at the 
+beginning, saturated after
+• Testing set: drops at the beginning 
+but higher than training set, and 
+goes up after a point (overfitted) 
+49
+# of epochs
+Error
+[IMAGES] 3
+
+=====PAGE 49=====
+Tuning models using Grid Search
+50
+[IMAGES] 3
+
+=====PAGE 50=====
+Tuning models using Grid Search
+51
+[IMAGES] 4
+
+=====PAGE 51=====
+Model Complexity
+52
+Training error and cross-validation error, as a function of model... |  Download Scientific Diagram
+[IMAGES] 3
+
+=====PAGE 52=====
+Model selection
+• Learning is an ill-posed problem
+• Data alone is not sufficient to find a unique solution
+• Inductive bias (i.e., assumptions about H) is needed. 
+• Generalization: how well a learned model performs on new data. 
+• Overfitting: H is more complex than C 
+• Underfitting: H is less complex than C 
+• Model selection: choosing the right inductive bias. 
+53
+[IMAGES] 4
+
+=====PAGE 53=====
+Model selection
+54
+[IMAGES] 3
+
+=====PAGE 54=====
+How do we process the Big Data? 
+Python!
+55
+[IMAGES] 2
+
+=====PAGE 55=====
+Python
+• Easy to use and easy to maintain
+• Portable library with supports from GUI programing
+• Cross platform: Mac, Windows and Unix
+• Free and open-source
+56
+Source: https://www.slideshare.net/EdurekaIN/python-ppt
+[IMAGES] 3
+
+=====PAGE 56=====
+• Library for the Python programming language
+• Support for large, multi-dimensional arrays and matrices 
+• Useful for linear algebra, Fourier transform, and random number 
+capabilities
+NumPy
+57
+[IMAGES] 2
+
+=====PAGE 57=====
+NumPy Examples
+Need to import NumPy (and other libraries)
+58
+[IMAGES] 3
+
+=====PAGE 58=====
+NumPy Indexing
+The index start from “0”, negative indexing are also supported
+59
+[IMAGES] 3
+
+=====PAGE 59=====
+K-Nearest Neighbors
+• KNN is a lazy learner. It builds no mathematical model during training; 
+it simply memorizes the dataset and defers all computation to the 
+moment a query is made.
+60
+[IMAGES] 3
+
+=====PAGE 60=====
+The Three Foundations of Distance
+•
+Straight-line geometric distance.
+•
+Sum of absolute coordinate 
+differences.
+•
+Measures directional alignment, 
+ignoring magnitude.
+•
+Best for continuous, low-
+dimensional, isotropic feature 
+spaces.
+•
+Best for high-dimensional, sparse 
+spaces; highly robust to outliers.
+•
+Best for scale-independent text 
+processing and document 
+representation.
+61
+[IMAGES] 3
+
+=====PAGE 61=====
+First, you need a space
+• A KNN algorithm is dependent on how closeness is defined
+• Changing the mathematical rules for measuring space fundamentally alters 
+which neighbors are considered closest
+62
+[IMAGES] 3
+
+=====PAGE 62=====
+Preparing the Space
+Standardization: Normalizes coordinates to prevent 
+large-scale variables from dominating distance
+Condensed Nearest Neighbor (CNN): A memory-saving 
+technique that deletes redundant interior data points,
+calculations.
+keeping only the boundary prototypes necessary to 
+maintain decision accuracy.
+63
+[IMAGES] 3
+
+=====PAGE 63=====
+Using KNN in Python
+64
+Points
+X1 (Acid Durability )
+X2(strength)
+Y=Classification
+P1
+7
+7
+BAD
+P2
+7
+4
+BAD
+P3
+3
+4
+GOOD
+P4
+1
+4
+GOOD
+[IMAGES] 3
+
+=====PAGE 64=====
+65
+[IMAGES] 3
+
+=====PAGE 65=====
+Demo: Scraping with OpenCode
+• prepare a python to collect the brand from 
+https://www.lanecrawford.com.hk/
+• Visualize the brand
+66
+[IMAGES] 3
+
+=====PAGE 66=====
+Readings
+• Numpy: https://numpy.org/doc/stable/user/quickstart.html
+• PyCharm: https://www.jetbrains.com/help/pycharm/creating-and-running-
+your-first-python-project.html#prerequisites
+• Opencode: https://opencode.ai
+67
+[IMAGES] 3
+
+=====PAGE 67=====
+Others
+• Please bring your computer for the next lecture
+• Install Opencode and PyCharm (professional version, free for students)
+• Learn virtual environment and install library 
+• Run the example in this lecture
+68
+[IMAGES] 2
+
+=====PAGE 68=====
+Questions?
+Email: pakmingcheung@cuhk.edu.hk
+[IMAGES] 2
