@@ -17,13 +17,15 @@ stat6207-learning/
 ├── lectures/
 │   ├── L1/
 │   │   ├── L1_notes.md           # 逐页中英对照 + 零基础讲解
+│   │   ├── L1_outline.md         # 1–2 页要领提纲（复习用）
 │   │   ├── L1_quiz.md            # 10 题 + 详细解析
 │   │   ├── L1_extracted.txt      # PDF 原始文本（备查）
 │   │   └── images/               # 提取的插图 + 整页渲染图
 │   ├── L2/ … L6/                 # 结构同上，待填充
 ├── sessions/
 │   ├── 20261022_062233_session.md  # L1 生成
-│   └── 20261022_062936_session.md  # 保存进度 + 固化启动规则
+│   ├── 20261022_062936_session.md  # 保存进度 + 固化启动规则
+│   └── 20261022_064921_session.md  # 数学难度回调 + 要领提纲
 └── tools/
     ├── extract_pdf.py            # 提取全文 + 全部图片
     └── extract_figures.py        # 只提取有意义的插图
@@ -33,14 +35,14 @@ stat6207-learning/
 
 ## 课程进度
 
-| 课 | 主题 | 笔记 | 练习 | 状态 |
-|---|---|---|---|---|
-| L1 | ML Foundations：什么是 ML、监督学习、KNN | [L1_notes](lectures/L1/L1_notes.md) | [L1_quiz](lectures/L1/L1_quiz.md) | ✅ 完成 |
-| L2 | Transfer Learning & ResNet | — | — | ⬜ 待开始 |
-| L3 | LLM, RAG, CoT, Agentic AI | — | — | ⬜ 待开始 |
-| L4 | Transformers, Quantization | — | — | ⬜ 待开始 |
-| L5 | CNN, Vision Transformer | — | — | ⬜ 待开始 |
-| L6 | Multimodal AI, VLM, Face Recognition | — | — | ⬜ 待开始 |
+| 课 | 主题 | 笔记 | 提纲 | 练习 | 状态 |
+|---|---|---|---|---|---|
+| L1 | ML Foundations：什么是 ML、监督学习、KNN | [L1_notes](lectures/L1/L1_notes.md) | [L1_outline](lectures/L1/L1_outline.md) | [L1_quiz](lectures/L1/L1_quiz.md) | ✅ 完成 |
+| L2 | Transfer Learning & ResNet | — | — | — | ⬜ 待开始 |
+| L3 | LLM, RAG, CoT, Agentic AI | — | — | — | ⬜ 待开始 |
+| L4 | Transformers, Quantization | — | — | — | ⬜ 待开始 |
+| L5 | CNN, Vision Transformer | — | — | — | ⬜ 待开始 |
+| L6 | Multimodal AI, VLM, Face Recognition | — | — | — | ⬜ 待开始 |
 
 > 实际章节以老师课件为准；上表为 P11 的课程大纲。
 
@@ -48,8 +50,8 @@ stat6207-learning/
 
 ## 下次从这里开始（2026-10-22 06:29）
 
-- **已完成**：L1 笔记与练习（68 页 / 10 题 / 35 图）。
-- **你正在做**：阅读 L1 笔记、完成 `L1_quiz.md` 自测。
+- **已完成**：L1 笔记、要领提纲与练习（68 页 / 1 页提纲 / 10 题 / 34 图）。
+- **你正在做**：阅读 L1 笔记与提纲、完成 `L1_quiz.md` 自测。
 - **下一节**：L2 — Transfer Learning & ResNet（`2026_6207_lecture_L2_final.pdf`）。
 - **继续方式**：对导师说 **"继续 L2"**；若想先讲错题，说 **"讲 L1 错题"**。
 
@@ -62,11 +64,11 @@ stat6207-learning/
 
 ### 学习一节课
 
-1. 先读 `Lx_notes.md` 的"本讲地图"和"10 句话总结"，建立框架。
-2. 从头逐节读，遇到公式先看"通俗解释"，再回看公式。
+1. 先读 `Lx_outline.md` 的要领提纲，建立框架（5 分钟）。
+2. 再读 `Lx_notes.md`，遇到公式先看"符号/直觉"，再回看公式。
 3. 读完后合上笔记，做 `Lx_quiz.md`。
 4. 对照答案解析，把错题对应的小节重读一遍。
-5. 动手跑笔记里的代码（NumPy / sklearn）。
+5. 最后用提纲做一次"合书回忆"，讲不出来的回 notes 查。
 
 ### 复习
 
