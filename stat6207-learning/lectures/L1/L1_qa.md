@@ -83,7 +83,7 @@ $$J(m)=\frac13\big[(2-m)^2+(4-2m)^2+(6-3m)^2\big]$$
 
 ### 7. 易错点 / 考点
 
-1. **MSE 不是 Accuracy（准确率）**。MSE 用于 **Regression（回归）**；分类用 **Cross-Entropy (CE，交叉熵)**。
+1. **MSE 不是 Accuracy（准确率）**。MSE 用于 **Regression（回归）**；分类用 **Cross-Entropy (CE，交叉熵)**（见 [`../L2/L2_qa.md`](../L2/L2_qa.md) Q1）。
 2. **训练时叫 Loss（损失），评估时叫 Metric（指标）**。同一个公式，两种用途。
 3. **MSE 小 ≠ 模型好**。训练集 MSE 低、测试集 MSE 高 = **Overfitting（过拟合）**。
 4. **MSE 与 $R^2$ 不同**：$R^2$ 是无量纲的相对指标，MSE 有单位。

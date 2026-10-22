@@ -1,7 +1,7 @@
 # STAT6207 L2 要领提纲（复习用）
 
 > 对应笔记：[`L2_notes.md`](L2_notes.md) ｜ 练习：[`L2_quiz.md`](L2_quiz.md) ｜ 答疑：[`L2_qa.md`](L2_qa.md)
-> 用法：合上笔记，先看本页回忆；卡住的地方再回 notes 对应页码。
+> 用法：先看 🧠 思维导图建立骨架 → 用 🗺️ 知识地图理清关系 → 再逐节回忆；卡住的地方回 notes 对应页码。
 
 ---
 
@@ -12,6 +12,105 @@ L2 把 L1 的"一条直线"升级为**线性分类器**（多维、多类），�
 ```
 线性模型 w^T x + b  →  迁移学习（冻结 / 微调 / 加权）  →  本地 LLM（显存估算）
 ```
+
+---
+
+## 🧠 思维导图（合上书，先盯这张看 30 秒）
+
+> 读法：从中心往外，每问一句"这是什么、为什么需要它"。
+> 需要支持 Mermaid 的阅读器（Typora / Obsidian / VS Code + MPE）；不显示时看第 2 节概念表。
+
+```mermaid
+mindmap
+  root((L2 线性分类器 · 迁移学习 · 本地 LLM))
+    线性分类器
+      内积 wTx 打分
+      Hadamard 逐元素乘
+      Sigmoid 压到 0 到 1
+      Logit = wTx
+      决策 p 大于 0.5 等价 wTx 大于 0
+      多类 argmax
+      边界是超平面
+      矩阵形式 z = Wx + b
+      One-Hot 无相似性
+    迁移学习
+      Source 与 Target
+      层次特征 浅层通用
+      三种对象
+        Representation 冻结编码器
+        Model Sharing 微调
+        Instance 过滤加权样本
+      决策矩阵
+        少于 1000 冻结
+        1000 到 50000 微调
+        多于 50000 从头训
+      LLM 造数据
+    本地 LLM
+      显存 P x b / 8 + 2
+      量化 4-bit 起步
+      MoE 省算力不省显存
+      KV Cache 占显存
+      Latency 与 Throughput
+      工具 LM Studio 与 Ollama
+```
+
+---
+
+## 🗺️ 知识地图（概念之间怎么连）
+
+> 实线 = 流程/依赖；虚线 = 影响/选择。三个方框分别对应 Part B / C / D。
+
+```mermaid
+flowchart TD
+  subgraph LIN["① 线性分类器 P6-P20"]
+    IP["内积 wᵀx"] --> S["打分 f(x)=wᵀx+b"]
+    S --> SIG["Sigmoid 输出概率"]
+    SIG --> DR["决策规则 p > 0.5"]
+    DR --> BD["边界 wᵀx+b=0 超平面"]
+    S --> MC["多类 argmax g_k(x)"]
+    MC --> MAT["矩阵形式 z = Wx + b"]
+    OH["One-Hot"] --> MAT
+  end
+
+  subgraph TL["② 迁移学习 P21-P65"]
+    ST["Source 源域 + Target 目标域"] --> HF["层次特征：浅层通用、深层专用"]
+    HF --> O1["Representation-based：冻结 + 换头"]
+    HF --> O2["Model Sharing-based：解冻 + 微调"]
+    HF --> O3["Instance-based：过滤 + 加权样本"]
+    DM{"数据量 + 领域相似度"} -->|"少于 1000，高相似"| FE["Feature Extraction"]
+    DM -->|"1000 到 50000"| FT["Fine-tuning"]
+    DM -->|"多于 50000，低相似"| FS["From Scratch"]
+    O1 -.->|"对应"| FE
+    O2 -.->|"对应"| FT
+    LLM["LLM 造数据 / 标注"] -.->|"补足 Target 数据"| DM
+  end
+
+  subgraph LOC["③ 本地 LLM P66-P83"]
+    MEM["显存 = P x b / 8 + 2"] --> QZ["量化：4-bit 起步"]
+    MEM --> MOE["MoE：省算力不省显存"]
+    MEM --> KV["KV Cache：随上下文增长"]
+    QZ --> TOOL["LM Studio / Ollama"]
+    TOOL --> PERF["Latency / Throughput 实测"]
+  end
+
+  L1["L1：线性模型 + 训练流程"] -.->|"升级为多维、多类"| LIN
+  LIN -->|"换分类头 / 微调"| TL
+  TL -->|"用 LLM 造数据、再本地部署"| LOC
+  LOC -.->|"下一站"| L3["L3：LLM / RAG / CoT / Agent"]
+```
+
+**60 秒回忆路线**（按顺序自问，答不出就回 notes）
+
+1. **打分**：线性分类器怎么算分？→ 内积 $w^Tx$ 加偏置 $b$（P7–P9）
+2. **概率**：分数怎么变成概率？→ Sigmoid；反函数是 logit（P10）
+3. **边界**：为什么边界是直线/超平面？→ $\log\frac{p}{1-p}=w^Tx$ 是线性的（P10–P11）
+4. **多类**：三个类怎么一次算完？→ $z=Wx+b$，再 argmax（P18）
+5. **借力**：数据不够怎么办？→ 迁移学习三选一（表 4.1）
+6. **区别**：冻结和微调差在哪？→ 梯度是否回流到编码器（P31/P44）
+7. **部署**：7B 模型 4-bit 要多少显存？→ $3.5+2=5.5$ GB（P74）
+8. **误区**：MoE 省什么？→ 只省算力，不省显存（P76）
+
+> 自检：能不看图把"打分 → 概率 → 边界 → 多类"和"数据量 → 三种迁移"两条链画出来，L2 就过关了。
 
 ---
 
