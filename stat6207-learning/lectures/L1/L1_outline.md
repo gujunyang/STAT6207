@@ -2,6 +2,7 @@
 
 > 对应笔记：[`L1_notes.md`](L1_notes.md) ｜ 练习：[`L1_quiz.md`](L1_quiz.md)
 > 用法：先看 🧠 思维导图建立骨架 → 用 🗺️ 知识地图理清关系 → 再逐节回忆；卡住的地方回 notes 对应页码。
+> 术语写法：**English（中文）**，以英文为主，方便考试和代码里认词。
 
 ---
 
@@ -26,16 +27,16 @@ mindmap
     ML 是什么
       从数据学规则 不是人写死
       监督学习
-        分类 Classification
-        回归 Regression
-      特征 Feature
-      标签 Label
+        Classification 分类
+        Regression 回归
+      Feature 特征
+      Label 标签
     模型
       线性模型 yhat = wTx + b
       参数 w b 由数据学
       超参数 K 学习率 人来定
     训练
-      损失 MSE
+      损失 MSE 均方误差
         残差
         平方
         平均
@@ -49,7 +50,7 @@ mindmap
       测试集 只考一次
       过拟合 训练好测试差
       欠拟合 两边都差
-    KNN
+    KNN K 近邻
       算距离
       取最近 K 个
       分类投票 回归平均
@@ -67,10 +68,10 @@ mindmap
 flowchart TD
   subgraph Q["① 问题定义 P14-P22"]
     A["数据 + 标签"] --> B["监督学习"]
-    B --> C1["分类 Classification"]
-    B --> C2["回归 Regression"]
-    F["特征 Feature"] --> A
-    LB["标签 Label"] --> A
+    B --> C1["Classification 分类"]
+    B --> C2["Regression 回归"]
+    F["Feature 特征"] --> A
+    LB["Label 标签"] --> A
   end
 
   subgraph MOD["② 建模 P24-P29"]
@@ -81,7 +82,7 @@ flowchart TD
   end
 
   subgraph TR["③ 训练 P24-P29"]
-    M --> LOSS["损失 MSE"]
+    M --> LOSS["损失 MSE 均方误差"]
     LOSS --> GD["梯度下降"]
     GD --> UPD["更新参数"]
     UPD --> M
@@ -89,7 +90,7 @@ flowchart TD
   end
 
   subgraph EV["④ 评估 P46-P52"]
-    UPD --> SPLIT["训练 / 验证 / 测试"]
+    UPD --> SPLIT["训练 Training / 验证 Validation / 测试 Test"]
     SPLIT --> OF["过拟合：训练好、测试差"]
     SPLIT --> UF["欠拟合：两边都差"]
     HP -.->|"在验证集上选"| SPLIT
@@ -98,12 +99,12 @@ flowchart TD
   subgraph KNN["⑤ 第一个算法 KNN P59-P64"]
     N1["算距离"] --> N2["取最近 K 个"]
     N2 --> N3["分类投票 / 回归平均"]
-    Z["标准化"] -->|"否则量纲大的特征主导"| N1
+    Z["标准化 Standardization"] -->|"否则量纲大的特征主导"| N1
     HP -.->|"K 太小过拟合、太大欠拟合"| N2
   end
 
   C1 -.->|"换一种算法解决同一任务"| KNN
-  OF -.->|"对策：更多数据 / 正则化 / early stopping"| MOD
+  OF -.->|"对策：更多数据 / Regularization 正则化 / early stopping 早停"| MOD
 ```
 
 **60 秒回忆路线**（按顺序自问，答不出就回 notes）
@@ -125,17 +126,18 @@ flowchart TD
 
 | # | 概念 | 一句话 | notes |
 |---|---|---|---|
-| 1 | Machine Learning | 从数据中调参数，而不是人写死规则 | P14 |
-| 2 | Classification vs Regression | 输出类别 vs 输出连续数值 | P14/P22 |
-| 3 | Feature / Label | 描述样本的属性 / 标准答案 | P41–P42 |
-| 4 | Parameter vs Hyperparameter | 模型自己学（$w,b$）vs 人设定（$K$、学习率） | P29 |
-| 5 | Loss (MSE) | 预测与真值的平方误差平均 | P24 |
-| 6 | Gradient Descent | 沿负梯度方向一步步降低损失 | P28–P29 |
-| 7 | Learning Rate | 每步走多大；太大会震荡，太小会慢 | P29 |
-| 8 | Train / Validation / Test | 学参数 / 选超参数 / 最后考一次 | P46–P47 |
-| 9 | Overfitting vs Underfitting | 训练好测试差 vs 两者都差 | P48/P51–P52 |
-| 10 | KNN | 找最近 $K$ 个邻居，分类投票、回归平均 | P59–P64 |
-| 11 | Standardization | 减均值除标准差，防止量纲主导距离 | P62 |
+| 1 | Machine Learning（机器学习） | 从数据中调参数，而不是人写死规则 | P14 |
+| 2 | Classification vs Regression（分类 vs 回归） | 输出类别 vs 输出连续数值 | P14/P22 |
+| 3 | Feature / Label（特征 / 标签） | 描述样本的属性 / 标准答案 | P41–P42 |
+| 4 | Parameter vs Hyperparameter（参数 vs 超参数） | 模型自己学（$w,b$）vs 人设定（$K$、学习率） | P29 |
+| 5 | Loss (MSE，损失 / 均方误差) | 预测与真值的平方误差平均 | P24 |
+| 6 | Gradient Descent（梯度下降） | 沿负梯度方向一步步降低损失 | P28–P29 |
+| 7 | Learning Rate（学习率） | 每步走多大；太大会震荡，太小会慢 | P29 |
+| 8 | Train / Validation / Test（训练 / 验证 / 测试） | 学参数 / 选超参数 / 最后考一次 | P46–P47 |
+| 9 | Overfitting vs Underfitting（过拟合 vs 欠拟合） | 训练好测试差 vs 两者都差 | P48/P51–P52 |
+| 10 | K-Nearest Neighbors (KNN，K 近邻) | 找最近 $K$ 个邻居，分类投票、回归平均 | P59–P64 |
+| 11 | Standardization（标准化） | 减均值除标准差，防止量纲主导距离 | P62 |
+| 12 | Generalization（泛化） | 在没见过的数据上表现好 | P46 |
 
 ---
 
@@ -188,23 +190,23 @@ $$z_j=\frac{x_j-\mu_j}{\sigma_j}$$
 
 | 步骤 | 用什么数据 | 目的 |
 |---|---|---|
-| 训练 | Training | 更新参数 $w,b$ |
-| 选超参数 | Validation | 选 $K$、学习率、模型复杂度 |
-| 最终评估 | Test | 只测一次，估计泛化能力 |
+| 训练 | Training（训练集） | 更新参数 $w,b$ |
+| 选超参数 | Validation（验证集） | 选 $K$、学习率、模型复杂度 |
+| 最终评估 | Test（测试集） | 只测一次，估计泛化能力 |
 
 ### 4.2 过拟合 vs 欠拟合
 
 | | 训练误差 | 验证误差 | 原因 | 对策 |
 |---|---|---|---|---|
 | 欠拟合 | 高 | 高 | 模型太简单/特征不够 | 加特征、加容量、训练更久 |
-| 过拟合 | 很低 | 高（U 形上升） | 模型太复杂/数据太少 | 更多数据、正则化、early stopping、简化模型 |
+| 过拟合 | 很低 | 高（U 形上升） | 模型太复杂/数据太少 | 更多数据、Regularization（正则化）、early stopping（早停）、简化模型 |
 
 ### 4.3 KNN 的三步
 
 ```
-1. Measure   算查询点到所有训练点的距离
-2. Find      取最近的 K 个
-3. Aggregate 分类投票 / 回归平均
+1. Measure（度量）   算查询点到所有训练点的距离
+2. Find（查找）      取最近的 K 个
+3. Aggregate（聚合） 分类投票 / 回归平均
 ```
 
 **K 的影响**：$K$ 太小 → 对噪声敏感（过拟合）；$K$ 太大 → 偏向多数类（欠拟合）。二分类常用奇数。
@@ -217,7 +219,7 @@ $$z_j=\frac{x_j-\mu_j}{\sigma_j}$$
 2. **训练误差低 ≠ 模型好**；要看验证/测试误差。
 3. **测试集不能调参**；否则数据泄漏，分数虚高。
 4. **KNN 必须先标准化**；否则量纲大的特征支配距离。
-5. **KNN 的"训练"只是存数据**，慢在预测；不要把 lazy 理解成"训练慢"。
+5. **KNN 的"训练"只是存数据**，慢在预测；不要把 lazy（惰性学习）理解成"训练慢"。
 
 ---
 
@@ -233,7 +235,7 @@ $$z_j=\frac{x_j-\mu_j}{\sigma_j}$$
 
 ## 7. 与 L2 的衔接
 
-- L1 的"模型容量/过拟合" → L2 的 ResNet（更深 + 残差连接）。
+- L1 的"模型容量/过拟合" → L2 的 ResNet（残差网络：更深 + 残差连接）。
 - L1 的"训练/验证/测试" → L2 的"预训练/微调/评估"。
 - L1 的 KNN（手工特征 + 距离）→ L2 的神经网络自动学特征。
 

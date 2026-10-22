@@ -27,6 +27,7 @@ stat6207-learning/
 │   │   ├── L2_outline.md         # 1–2 页要领提纲
 │   │   ├── L2_quiz.md            # 10 题 + 详细解析
 │   │   ├── L2_qa.md              # 答疑笔记本
+│   │   ├── L2_derivation.md      # 二分类 / 多分类完整推导（独立讲义）
 │   │   ├── L2_extracted.txt      # PDF 原始文本
 │   │   └── images/               # 提取插图
 │   ├── L3/ … L6/                 # 结构同上，待填充
@@ -38,7 +39,20 @@ stat6207-learning/
 │   ├── 20261022_202044_session.md  # L2 生成（笔记本 / 提纲 / 练习 / 答疑）
 │   ├── 20261022_203115_session.md  # L1 / L2 提纲加思维导图 + 知识地图
 │   ├── 20261022_204230_session.md  # Cross-Entropy 答疑（L2 Q1）
-│   └── 20261022_204929_session.md  # $e$ 与 $\log$ 的意义答疑（L2 Q2）
+│   ├── 20261022_204929_session.md  # $e$ 与 $\log$ 的意义答疑（L2 Q2）
+│   ├── 20261023_030522_session.md  # Sigmoid / logit 答疑（L2 Q3）+ 提纲术语中英标注
+│   ├── 20261023_032726_session.md  # Decision Rule 的 $\hat y$ / argmax 答疑（L2 Q4）
+│   ├── 20261023_034007_session.md  # Sigmoid vs Softmax + B2/B3 例题（L2 Q5）
+│   ├── 20261023_034548_session.md  # Softmax / 保序 / 类号 / CE / MSE 全景（L2 Q6）
+│   ├── 20261023_040735_session.md  # 训练流程 + 判别函数 / 区域 / 边界（L2 Q7）
+│   ├── 20261023_042154_session.md  # 梯度推导 + $L=-\ln p$ / $y_k$ + 二分三分算例（L2 Q8）
+│   ├── 20261023_050823_session.md  # Q8 §2.3 补写 $y$ 的定义 / 来源 / 意义
+│   ├── 20261023_051146_session.md  # 把"$p$ 与 $y$ 别混"并入 Q8 §2.3
+│   ├── 20261023_053231_session.md  # $\partial L/\partial p$ 两分支如何合并（Q8 §2.5）
+│   ├── 20261023_060906_session.md  # P15 的"类别数 $K$"是什么意思
+│   ├── 20261023_064503_session.md  # 新建独立讲义 L2_derivation.md
+│   ├── 20261023_070447_session.md  # Representation-based / 编码器 / 分类头（L2 Q9）
+│   └── 20261023_071745_session.md  # 提交到远端（无新增教学内容）
 └── tools/
     ├── extract_pdf.py            # 提取全文 + 全部图片
     └── extract_figures.py        # 只提取有意义的插图
@@ -50,24 +64,26 @@ stat6207-learning/
 
 | 课 | 主题 | 笔记 | 提纲 | 练习 | 答疑 | 状态 |
 |---|---|---|---|---|---|---|
-| L1 | ML Foundations：什么是 ML、监督学习、KNN | [L1_notes](lectures/L1/L1_notes.md) | [L1_outline](lectures/L1/L1_outline.md) | [L1_quiz](lectures/L1/L1_quiz.md) | [L1_qa](lectures/L1/L1_qa.md) | ✅ 完成 |
-| L2 | Linear Classifier、Transfer Learning、Local LLM | [L2_notes](lectures/L2/L2_notes.md) | [L2_outline](lectures/L2/L2_outline.md) | [L2_quiz](lectures/L2/L2_quiz.md) | [L2_qa](lectures/L2/L2_qa.md) | ✅ 完成 |
+| L1 | ML Foundations：什么是 ML、监督学习、KNN | [L1_notes](lectures/L1/L1_notes.md) | [L1_outline](lectures/L1/L1_outline.md) | [L1_quiz](lectures/L1/L1_quiz.md) | [L1_qa](lectures/L1/L1_qa.md) | ✅ 完成（提纲术语中英对照） |
+| L2 | Linear Classifier、Transfer Learning、Local LLM | [L2_notes](lectures/L2/L2_notes.md) | [L2_outline](lectures/L2/L2_outline.md) | [L2_quiz](lectures/L2/L2_quiz.md) | [L2_qa](lectures/L2/L2_qa.md) | ✅ 完成（提纲术语中英对照） |
 | L3 | LLM, RAG, CoT, Agentic AI | — | — | — | — | ⬜ 待开始 |
 | L4 | Transformers, Quantization | — | — | — | — | ⬜ 待开始 |
 | L5 | CNN, Vision Transformer | — | — | — | — | ⬜ 待开始 |
 | L6 | Multimodal AI, VLM, Face Recognition | — | — | — | — | ⬜ 待开始 |
 
 > 实际章节以老师课件为准；上表为 P11 的课程大纲。
+>
+> 另：L2 的二分类 / 多分类完整数学推导（符号表、函数清单、算例）见 [`lectures/L2/L2_derivation.md`](lectures/L2/L2_derivation.md)。
 
 ---
 
-## 下次从这里开始（2026-10-22 20:49）
+## 下次从这里开始（2026-10-23 07:17）
 
-- **已完成**：L1 / L2 全套；两份 outline 顶部新增 🧠 思维导图 + 🗺️ 知识地图；L2 答疑新增 Q1「Cross-Entropy 是什么」、Q2「为什么到处是 $e$ 和 $\log$」。
-- **你正在做**：读 `L2_qa.md` Q1 + Q2 → 用导图做合书回忆 → 做 `L2_quiz.md`。
+- **已完成**：L1 / L2 全套；两份 outline 英文概念已标注中文；L2 答疑到 Q9；另有独立讲义 `L2_derivation.md`。
+- **你正在做**：读 Q9（编码器 / 表示 / 分类头）→ 复算 §7 小例 → 做 `L2_quiz.md`。
 - **下一节**：L3 — LLM, RAG, CoT, Agentic AI（`2026_6207_Lecture_L3_v1.pdf`）。
 - **继续方式**：对导师说 **"继续 L3"**；想先讲 L2 错题，说 **"讲 L2 错题"**。
-- **Q2 的三个待验证手算**：Softmax $z=(2,1,0)$、高斯对数似然 → MSE、1000 个 0.01 连乘的 log 版本。
+- **Q8 的待验证手算**：① 考试例第 3 轮；② 水果例 $(4,1)$ 与 $(1,1)$ 的 $z$ 与 argmax；③ 水果例更新后的 $p$ 与 CE。
 
 > 每次会话开始，导师会先读 `SKILL.md` → 本文件 → `sessions/` 最新记录 → 本课 `Lx_qa.md` 索引，
 > 再确认进度，不会从头重讲。
