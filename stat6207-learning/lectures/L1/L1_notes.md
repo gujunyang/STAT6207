@@ -40,6 +40,8 @@
 - [术语表](#术语表)
 - [10 个最容易错的地方](#10-个最容易错的地方)
 - [本讲 10 句话总结](#本讲-10-句话总结)
+- [与 L2 的衔接](#与-l2-的衔接)
+- [答疑记录](#答疑记录)
 
 ---
 
@@ -54,7 +56,7 @@
 L1 只回答三个问题：
 
 1. **机器学习到底是什么？** —— 不是写死规则，而是让程序从数据里"调参数"。
-2. **怎么衡量学得好不好？** —— 用损失函数（loss）和训练/验证/测试集。
+2. **怎么衡量学得好不好？** —— 用Loss Function（损失函数）和训练/验证/测试集。
 3. **最简单的算法长什么样？** —— KNN：看离你最近的 K 个邻居是谁，就跟着投票。
 
 本讲的核心逻辑链（务必记住这张图）：
@@ -87,9 +89,13 @@ L1 只回答三个问题：
 
 > **原文**：STAT6207 Applied Deep Learning, 11 Sept 2026, By Dr. Ming Cheung
 
-**中文**：STAT6207 应用深度学习，2026 年 9 月 11 日，张明博士。
+**中文**
 
-**讲解**：这门课的名字里有两个词：
+STAT6207 应用深度学习，2026 年 9 月 11 日，张明博士。
+
+**讲解**
+
+这门课的名字里有两个词：
 
 - **Applied（应用）**：重点是把模型用起来，而不是纯数学证明。
 - **Deep Learning（深度学习）**：用"很多层的神经网络"做机器学习，是机器学习的一个子集。
@@ -105,9 +111,15 @@ L1 只回答三个问题：
 > • What are machine learning
 > • Supervised Learning and KNN
 
-**中文**：课程介绍；什么是机器学习；监督学习与 KNN。
+**中文**
 
-**讲解**：这三块就是本讲的 Part A / B / D+F。注意老师把 KNN 放在第一节课，是因为它**几乎不需要训练**，最适合用来建立"特征、距离、标签、投票"这些直觉。
+- 课程介绍。
+- 什么是机器学习。
+- 监督学习与 KNN。。
+
+**讲解**
+
+这三块就是本讲的 Part A / B / D+F。注意老师把 KNN 放在第一节课，是因为它**几乎不需要训练**，最适合用来建立"特征、距离、标签、投票"这些直觉。
 
 ---
 
@@ -118,12 +130,15 @@ L1 只回答三个问题：
 > 2. Understand machine learning applications to solve real problems in generative adversarial networks, large language model, etc.;
 > 3. Gain hands on experience through projects and activities using agentic coders and Python libraries, such as OpenCode, PyTorch and Numpy, with projects
 
-**中文**：
-1. 学习机器学习与深度学习的理论；
-2. 理解机器学习在真实问题中的应用，例如生成对抗网络（GAN）、大语言模型（LLM）等；
-3. 通过项目和活动获得动手经验，使用智能编程工具（agentic coder）以及 Python 库，如 OpenCode、PyTorch、NumPy。
+**中文**
 
-**讲解**：课程有三条腿——**理论（Theory）／应用（Application）／动手（Hands on）**。
+1. 学习机器学习与深度学习的理论。
+2. 理解机器学习在真实问题中的应用，例如 Generative Adversarial Network (GAN，生成对抗网络)、Large Language Model (LLM，大语言模型) 等。
+3. 通过项目和活动获得动手经验：使用 Agentic Coder（智能编程工具）以及 Python 库，如 OpenCode、PyTorch、NumPy。
+
+**讲解**
+
+课程有三条腿——**理论（Theory）／应用（Application）／动手（Hands on）**。
 
 - **Theory**：为什么模型能学？什么叫泛化？
 - **Application**：GAN 生成图片、LLM 聊天，这些是怎么实现的？
@@ -141,13 +156,16 @@ L1 只回答三个问题：
 > • Course material and other information will be posted on Blackboard
 > • Pre-slide for the week will be released every Wednesday
 
-**中文**：
-- 数学：多元微积分、线性代数、概率论；
-- 编程：OpenCode、Python 与 NumPy，以及概率与机器学习基础；
-- 课程材料会发布在 Blackboard；
-- 每周三发布本周的预习幻灯片。
+**中文**
 
-**讲解**：看到"多元微积分"不要慌，本讲真正用到的只有三样：
+- 数学：多元微积分、线性代数、概率论。
+- 编程：OpenCode、Python 与 NumPy，以及概率与机器学习基础。
+- 课程材料会发布在 Blackboard。
+- 每周三发布本周的预习幻灯片。。
+
+**讲解**
+
+看到"多元微积分"不要慌，本讲真正用到的只有三样：
 
 1. **导数**：函数在某一点的斜率，告诉你"往哪个方向走会让函数变小"。
 2. **向量/矩阵**：把多个特征排成一列，方便批量计算。
@@ -167,9 +185,16 @@ L1 只回答三个问题：
 >   • A detailed description of all modifications made to the AI-generated content.
 > • Do not use it to skip learning
 
-**中文**：允许在作业、编程考试和项目中使用生成式 AI（ChatGPT、Claude、Grok 等）和智能编程工具（OpenCode）。但必须**透明申报**：附上可分享的对话链接（包含所有 prompt 和 AI 输出）；若用 agentic coder，要提交会话记录；并详细说明你对 AI 生成内容做了哪些修改。**不要用它来跳过学习。**
+**中文**
 
-**讲解**：政策的核心是"**可以用，但要交代**"。这就像写论文引用别人的观点：用了就要标注。
+- 允许在作业、编程考试和项目中使用生成式 AI（ChatGPT、Claude、Grok 等）和智能编程工具（OpenCode）。
+- 但必须**透明申报**：附上可分享的对话链接（包含所有 prompt 和 AI 输出）；若用 agentic coder，要提交会话记录；并详细说明你对 AI 生成内容做了哪些修改。
+- **不要用它来跳过学习。
+- **
+
+**讲解**
+
+政策的核心是"**可以用，但要交代**"。这就像写论文引用别人的观点：用了就要标注。
 
 > 💡 对本课程的实际建议：让 AI 解释概念、生成初稿、debug 都可以；但每次提交前问自己——"如果考试让我手写这段，我写得出来吗？"
 
@@ -182,9 +207,15 @@ L1 只回答三个问题：
 > • Discussion is part of the learning; you are welcome to discuss your challenges with me during the breaks and after classes. You don't learn to swim by reading about water.
 > • Agentic Coders and LLM are tools for build, but you should spend the time to understand the concepts and build them
 
-**中文**：随时提问，讲课时也可以打断；讨论是学习的一部分，欢迎课间和课后交流——"读游泳书是学不会游泳的"；Agentic Coder 和 LLM 是构建工具，但你应该花时间理解概念并亲手构建。
+**中文**
 
-**讲解**：老师的比喻很到位：**看懂了 ≠ 会做了**。所以本笔记每节都有手算/代码练习，别只看。
+- 随时提问，讲课时也可以打断。
+- 讨论是学习的一部分，欢迎课间和课后交流——"读游泳书是学不会游泳的"。
+- Agentic Coder 和 LLM 是构建工具，但你应该花时间理解概念并亲手构建。。
+
+**讲解**
+
+老师的比喻很到位：**看懂了 ≠ 会做了**。所以本笔记每节都有手算/代码练习，别只看。
 
 ---
 
@@ -192,9 +223,9 @@ L1 只回答三个问题：
 
 > **原文**：Course Introduction
 
-**中文**：课程介绍。
+**中文**
 
-（封面页，无知识点。）
+课程介绍。
 
 ---
 
@@ -214,12 +245,19 @@ L1 只回答三个问题：
 > • The overall language you used in your report should be concise and able to clearly convey your idea.
 > • Only selected groups will present their works to the guests.
 
-**中文**：形式为一次展示 + 一份报告。评分维度：
+**中文**
+
+- 形式为一次展示 + 一份报告。
+
+评分维度：
+
 - **数据处理与方法**：把所学（或任何技术）用到数据上达到预期结果；在报告中清楚说明用了什么方法/算法、怎么用的。
 - **实验结果**：清楚陈述结果；用表格、图、图表等可视化来支撑结论；从结果中得出有意思的结论/洞见。
 - **展示与组织**：报告逻辑清楚、易读；语言简洁、能清楚传达想法；只有被选中的小组会向嘉宾展示。
 
-**讲解**：这份评分标准其实在暗示"高分报告长什么样"：
+**讲解**
+
+这份评分标准其实在暗示"高分报告长什么样"：
 
 1. **方法可复现**：别人照你的描述能重做。
 2. **结果有证据**：不要只说"效果很好"，要给表和图。
@@ -234,9 +272,13 @@ L1 只回答三个问题：
 
 > **原文**：Last Semester Reports / Last Semester Grading
 
-**中文**：上学期报告展示 / 上学期评分情况。
+**中文**
 
-**讲解**：这两页是往届样例，用来让你知道期望水平。图片是学生作品截图，本笔记不逐张翻译。可提取的图在 `images/L1_p09_fig3.png` 等。
+上学期报告展示 / 上学期评分情况。
+
+**讲解**
+
+这两页是往届样例，用来让你知道期望水平。图片是学生作品截图，本笔记不逐张翻译。可提取的图在 `images/L1_p09_fig3.png` 等。
 
 > 观察重点：好的报告通常有清晰的"问题 → 数据 → 方法 → 结果 → 结论"结构。
 
@@ -257,9 +299,22 @@ L1 只回答三个问题：
 | 13 | Ethics, Course Review & Future Horizons (Bias, Ethics, Course Review) |
 | 14 | Project Presentation |
 
-**中文**：第 1–2 讲机器学习基础（监督学习、KNN、迁移学习与 ResNet）；第 3–4 讲大语言模型、架构与效率（RAG、思维链、Agentic AI、Transformer、量化等）；第 5–6 讲计算机视觉与多模态 AI（CNN、视觉 Transformer、视觉编码器、VLM、人脸识别演示）；第 7 讲考试；第 8–10 讲深度学习核心与无监督学习（嵌入、自编码器、聚类、图神经网络、反向传播、优化器与部署）；第 11–12 讲生成式 AI、强化学习与高级范式（GAN、Stable Diffusion、联邦学习、强化学习奖励模型）；第 13 讲伦理、复习与未来展望；第 14 讲项目展示。
+**中文**
 
-**讲解**：这张表是你的"学习路线图"。可以看到：
+| 讲次 | 主题 |
+|---|---|
+| 1–2 | 机器学习基础（Supervised Learning、KNN、Transfer Learning & ResNet） |
+| 3–4 | LLM、架构与效率（RAG、CoT、Agentic AI、Transformer、Quantization） |
+| 5–6 | Computer Vision 与 Multimodal AI（CNN、ViT、VLM、人脸识别演示） |
+| 7 | 考试 |
+| 8–10 | 深度学习核心与无监督学习（Embedding、Autoencoder、Clustering、GNN、Backpropagation、Optimizer） |
+| 11–12 | 生成式 AI、RL 与高级范式（GAN、Stable Diffusion、Federated Learning） |
+| 13 | 伦理、复习与未来展望 |
+| 14 | 项目展示 |
+
+**讲解**
+
+这张表是你的"学习路线图"。可以看到：
 
 - **L1–L2 是地基**：没有监督学习和 KNN，后面的 ResNet、Transformer 都会变成天书。
 - **L3–L4 是当前最热的方向**：LLM 与效率优化。
@@ -277,9 +332,16 @@ L1 只回答三个问题：
 > • KV caches, MoE, quantization & mix-precision
 > • Using Local LLMs (e.g., Qwen, Gemma) for deep learning applications
 
-**中文**：2026 年新增内容：更多关于 Agentic AI 和 OpenCode 的使用；基于 LLM 的聚类；KV cache、混合专家（MoE）、量化与混合精度；使用本地 LLM（如 Qwen、Gemma）做深度学习应用。
+**中文**
 
-**讲解**：这些是"今年新加的考点/项目方向"。名词先混个脸熟：
+- 2026 年新增内容：更多关于 Agentic AI 和 OpenCode 的使用。
+- 基于 LLM 的聚类。
+- KV cache、Mixture of Experts (MoE，混合专家)、量化与混合精度。
+- 使用本地 LLM（如 Qwen、Gemma）做深度学习应用。。
+
+**讲解**
+
+这些是"今年新加的考点/项目方向"。名词先混个脸熟：
 
 - **Agentic AI**：会自己规划步骤、调用工具的 AI。
 - **KV cache**：缓存注意力计算中的 Key/Value，加速生成。
@@ -293,9 +355,13 @@ L1 只回答三个问题：
 
 > **原文**：Course Introduction / What are machine learning / Supervised Learning and KNN
 
-**中文**：课程介绍 / 什么是机器学习 / 监督学习与 KNN。
+**中文**
 
-**讲解**：正式进入技术部分。
+课程介绍 / 什么是机器学习 / 监督学习与 KNN。
+
+**讲解**
+
+正式进入技术部分。
 
 ---
 
@@ -313,12 +379,18 @@ L1 只回答三个问题：
 
 ![猫狗/水果的区分问题](images/L1_p14_fig3.png)
 
-**中文**：你怎么判断它们是狗还是猫？怎么判断是香蕉还是苹果？——分类；回归。
+**中文**
 
-**讲解**：这两张图代表机器学习的两大任务：
+- 你怎么判断它们是狗还是猫？
+- 怎么判断是香蕉还是苹果？
+- ——分类；回归。
 
-- **分类（Classification）**：输出是**类别**，是离散的。比如"猫/狗""垃圾邮件/正常邮件""家庭用车/其他车"。
-- **回归（Regression）**：输出是**数值**，是连续的。比如"这套房卖多少钱""明天温度多少""这辆车的油耗"。
+**讲解**
+
+这两张图代表机器学习的两大任务：
+
+- **Classification（分类）**：输出是**类别**，是离散的。比如"猫/狗""垃圾邮件/正常邮件""家庭用车/其他车"。
+- **Regression（回归）**：输出是**数值**，是连续的。比如"这套房卖多少钱""明天温度多少""这辆车的油耗"。
 
 一个记忆口诀：**分类猜"哪一类"，回归猜"多少"**。
 
@@ -350,9 +422,28 @@ $$y = mx + c$$
 
 ![用一条直线把两类点分开](images/L1_p15_fig3.png)
 
-**中文**：用一条直线作为分界线。变量是 $x$ 和 $y$；常量是 $m$ 和 $c$。图上：$m$ 是斜率（gradient），$c$ 是 y 轴截距。
+**中文**
 
-**数学视角**（斜率不再展开）：
+- 用一条直线作为分界线。
+- 变量是 $x$ 和 $y$；常量是 $m$ 和 $c$。
+- 图上：$m$ 是斜率（gradient），$c$ 是 y 轴截距。
+
+- $y=mx+c$ 是 $\mathbb{R}\to\mathbb{R}$ 的**仿射函数**：$m$ 是线性系数，$c$ 是平移项。
+- 写成内积形式更接近 ML 的通用记号。令 $x=(x_1,\dots,x_d)^T$、$w=(w_1,\dots,w_d)^T$，则
+
+$$
+\hat y=w^Tx+b
+$$
+
+  一维时 $w=m,\ b=c$。$w$ 与 $b$ 是**待估参数** $\theta=(w,b)$，不是给定常数。
+
+- 作为**分类器**时，$w^Tx+b=0$ 是**Decision Boundary（决策边界）**：一维输入时是一个阈值点，二维时是一条直线，$d$ 维时是一个超平面。判别规则：
+
+$$
+h(x)=\operatorname{sign}(w^Tx+b)
+$$
+
+  图中蓝/红点线性不可分，说明这个 $H$（线性分类器）容量不足：要么做特征映射，要么换非线性模型。这直接对应 P43 的"假设类容量"与 P52 的"Inductive Bias（归纳偏置）"。
 
 - $y=mx+c$ 是 $\mathbb{R}\to\mathbb{R}$ 的**仿射函数**：$m$ 是线性系数，$c$ 是平移项。
 - 写成内积形式更接近 ML 的通用记号：令 $x=(x_1,\dots,x_d)^T$、$w=(w_1,\dots,w_d)^T$，则
@@ -372,14 +463,18 @@ $$h(x)=\operatorname{sign}(w^Tx+b).$$
 
 ![自动驾驶场景：行人、球、来车](images/L1_p16_fig3.png)
 
-**中文**：司机应该怎么做？
+**中文**
 
-**讲解**：这张图是一个**序列决策**问题，不只是"分类一张图"：
+司机应该怎么做？
 
-1. **感知（perception）**：前方有小孩追球、右侧有老人、对向有车、车速 68 mph。
-2. **预测（prediction）**：小孩可能会冲进马路；老人可能走得慢。
-3. **决策（decision）**：刹车？左转？鸣笛？
-4. **控制（control）**：踩刹车的力度、方向盘角度。
+**讲解**
+
+这张图是一个**序列决策**问题，不只是"分类一张图"：
+
+1. **Perception（感知）**：前方有小孩追球、右侧有老人、对向有车、车速 68 mph。
+2. **Prediction（预测）**：小孩可能会冲进马路；老人可能走得慢。
+3. **Decision（决策）**：刹车？左转？鸣笛？
+4. **Control（控制）**：踩刹车的力度、方向盘角度。
 
 传统编程很难写全"如果小孩追球且右侧有老人且对向有车……"的规则。机器学习的方法是从**人类驾驶数据**中学习"看到这种画面，老司机一般怎么做"。
 
@@ -391,15 +486,19 @@ $$h(x)=\operatorname{sign}(w^Tx+b).$$
 
 > **原文**：Where do you want the car to go?
 
-**中文**：你想让车去哪里？
+**中文**
 
-**讲解**：这一页讲**标注（labeling）**。
+你想让车去哪里？
+
+**讲解**
+
+这一页讲**Labeling（标注）**。
 
 - 对分类：每张图要标"这是猫/狗"。
 - 对自动驾驶：每帧画面要标"方向盘应该转多少度""应该加速还是刹车"。
 - 对回归：每个样本要标"真实房价是多少"。
 
-**标签就是"标准答案"**。监督学习（supervised learning）的本质就是：**用一堆"题目 + 标准答案"去调整模型，让它以后遇到新题也能答对**。
+**标签就是"标准答案"**。Supervised Learning（监督学习）的本质就是：**用一堆"题目 + 标准答案"去调整模型，让它以后遇到新题也能答对**。
 
 > 标注很贵：请人标 10 万张图要花很多钱和时间。这也是为什么"自监督学习""迁移学习"（L2）很重要——尽量少用标签。
 
@@ -414,15 +513,21 @@ $$h(x)=\operatorname{sign}(w^Tx+b).$$
 
 ![三种自动驾驶架构](images/L1_p18_fig3.png)
 
-**中文**：输入图像 →（1）间接感知（先检测车道、车辆等，再决策）→ 驾驶控制；（2）行为反射（直接把图像映射到方向盘）→ 驾驶控制；（3）直接感知（本文方法：直接估计车道、距离等）→ 驾驶控制。
+**中文**
 
-**讲解**：三种"拆步骤"的方式：
+- **Mediated Perception（间接感知）**：输入图像 → 先检测车道、车辆等中间量 → 驾驶控制；例：Mobileye、Google。
+- **Behavior Reflex（行为反射）**：输入图像 → 直接映射到方向盘转角 → 驾驶控制；例：ALVINN、LeCun et al.；也就是 End-to-End（端到端）。
+- **Direct Perception（直接感知，本文方法）**：输入图像 → 直接估计车道位置、车距等 → 驾驶控制。
+
+**讲解**
+
+三种"拆步骤"的方式：
 
 1. **Mediated Perception（中介感知/模块化）**：先做目标检测，把"车在哪、车道在哪"变成结构化信息，再规划。优点是可解释，缺点是误差会累积（检测错→规划错）。
 2. **Behavior Reflex（行为反射/端到端）**：一个神经网络直接看图输出方向盘角度。优点是简单，缺点是可解释性差、需要大量数据。
 3. **Direct Perception（直接感知）**：不检测完整物体，只估计"车道线位置、与前车距离"等少量关键量，再控制。是折中方案。
 
-> 这三个词后面会反复出现：**模块化（modular） vs 端到端（end-to-end）**。深度学习的趋势是端到端，但安全关键场景仍需要可解释的中间量。
+> 这三个词后面会反复出现：**Modular（模块化） vs End-to-End（端到端）**。深度学习的趋势是端到端，但安全关键场景仍需要可解释的中间量。
 
 ---
 
@@ -430,9 +535,13 @@ $$h(x)=\operatorname{sign}(w^Tx+b).$$
 
 > **原文**：Introduction to Deep Learning: Machine Learning vs. Deep Learning
 
-**中文**：深度学习入门：机器学习 vs 深度学习（视频）。
+**中文**
 
-**讲解**：视频的核心信息通常是：
+深度学习入门：机器学习 vs 深度学习（视频）。
+
+**讲解**
+
+视频的核心信息通常是：
 
 - **机器学习**：需要人**手工设计特征**（feature engineering）。比如判断苹果，人要告诉程序"看颜色、形状、纹理"。
 - **深度学习**：**自动学特征**。给原始像素，网络自己学出"边缘→纹理→部件→物体"。
@@ -449,9 +558,13 @@ $$h(x)=\operatorname{sign}(w^Tx+b).$$
 
 ![深层网络与大脑的分层抽象](images/L1_p20_fig3.png)
 
-**中文**："深"指的是分层模型架构，通常比传统学习模型更深；人脑有更深的分层结构，抽象层次逐级提高。
+**中文**
 
-**讲解**：**"深" = 层数多**，不是"深奥"。
+"深"指的是分层模型架构，通常比传统学习模型更深；人脑有更深的分层结构，抽象层次逐级提高。
+
+**讲解**
+
+**"深" = 层数多**，不是"深奥"。
 
 一个图像网络可能这样分层：
 
@@ -476,9 +589,11 @@ $$h(x)=\operatorname{sign}(w^Tx+b).$$
 
 ![CPU 与 GPU 架构对比](images/L1_p21_fig3.png)
 
-**中文**：图形处理器 vs 中央处理器。
+**中文**
 
-**讲解**：
+图形处理器 vs 中央处理器。
+
+**讲解**
 
 - **CPU**：少数几个"很聪明"的核心，擅长复杂逻辑、串行任务。像**几个博士生**。
 - **GPU**：成千上万个"简单"的核心，擅长同时做大量相同的算术。像**一万个小学生同时做加法**。
@@ -501,9 +616,10 @@ $$h(x)=\operatorname{sign}(w^Tx+b).$$
 
 ![回归：找一条拟合数据的曲线](images/L1_p22_fig3.png)
 
-**中文**：目标：找到一个能拟合数据的方程；使用一个预先定义的函数。特征 1 / 特征 2。
+**中文**
 
-**数学视角：从单样本到设计矩阵**
+- 目标：找到一个能拟合数据的方程；使用一个预先定义的函数。
+- 特征 1 / 特征 2。
 
 设 $n$ 个样本、$d$ 个特征。把每个样本写成行向量，并在最前面补一列 $1$ 来吸收偏置：
 
@@ -515,7 +631,7 @@ $$X=\begin{bmatrix}1 & x_{11} & \cdots & x_{1d}\\ \vdots & \vdots & & \vdots\\ 1
 $$\hat y=X\theta\in\mathbb{R}^n.$$
 
 **符号解释**：
-- $X$ 叫**设计矩阵（design matrix）**：每一行是一个样本，每一列是一个特征（第 0 列全 1）。
+- $X$ 叫**Design Matrix（设计矩阵）**：每一行是一个样本，每一列是一个特征（第 0 列全 1）。
 - 维度检查：$(n\times(d+1))\,((d+1)\times1)=n\times1$，正好是 $n$ 个预测值。
 - 单样本时就是 $\hat y_i=\theta^T x_i$（把 $x_i$ 也补一个 1）。
 - 这就是你线代里学的矩阵乘法：$X$ 的每一行与 $\theta$ 做内积。
@@ -531,9 +647,15 @@ $$\hat y=X\theta\in\mathbb{R}^n.$$
 > • Training & Visualization
 > • Deployment & Fine-tuning
 
-**中文**：数据收集；训练与可视化；部署与微调。
+**中文**
 
-**讲解**：这是机器学习项目的"三段式"：
+- 数据收集。
+- 训练与可视化。
+- 部署与微调。。
+
+**讲解**
+
+这是机器学习项目的"三段式"：
 
 ```
 1. 数据收集            2. 训练与可视化           3. 部署与微调
@@ -562,21 +684,27 @@ $$y = mx + c$$
 
 ![散点与拟合直线](images/L1_p24_fig3.png)
 
-**中文**：最好的 $m$ 和 $c$ 是什么？
+**中文**
 
-**损失函数：均方误差（Mean Squared Error, MSE）**
+最好的 $m$ 和 $c$ 是什么？
 
 $$J(m,c)=\frac1n\sum_{i=1}^{n}\big(y_i-(mx_i+c)\big)^2.$$
 
 **符号**：
 - $n$：样本数；$y_i$：第 $i$ 个真实值；$mx_i+c$：预测值 $\hat y_i$；
-- $y_i-\hat y_i$：**残差**（预测偏了多少）；
+- $y_i-\hat y_i$：**Residual（残差）**（预测偏了多少）；
 - 平方：让正负误差都变正，并**重罚大误差**；
 - $\frac1n\sum_i$：对所有样本求平均。
 
 **为什么用平方而不是绝对值**：平方函数光滑、可导（方便后面求梯度），且对大误差惩罚更重；代价是对离群点敏感。
 
-**矩阵写法（了解即可）**：把参数排成向量 $\theta=(c,m)^T$，每个样本补一个 1，记 $\tilde x_i=(1,x_i)^T$，则 $\hat y_i=\theta^T\tilde x_i$。这只是把求和写紧凑，本课**不要求**矩阵求导。
+**矩阵写法（了解即可）**：把参数排成向量 $\theta=(c,m)^T$，每个样本补一个 1，记 $\tilde x_i=(1,x_i)^T$，则
+
+$$
+\hat y_i=\theta^T\tilde x_i
+$$
+
+这只是把求和写紧凑，本课**不要求**矩阵求导。
 
 **一维手算**（固定 $c=0$，只学 $m$）：$J(m)=\frac13[(2-m)^2+(4-2m)^2+(6-3m)^2]$。
 
@@ -597,9 +725,13 @@ $$J(m,c)=\frac1n\sum_{i=1}^{n}\big(y_i-(mx_i+c)\big)^2.$$
 
 ![山峰：你在这里，最优解在山顶](images/L1_p25_fig3.png)
 
-**中文**：如何以最小误差获得最好的分类结果（山顶）？最好的 $m$ 和 $c$ 在这里；你在这里。
+**中文**
 
-**讲解**：这是一个**优化的比喻**：
+如何以最小误差获得最好的分类结果（山顶）？最好的 $m$ 和 $c$ 在这里；你在这里。
+
+**讲解**
+
+这是一个**优化的比喻**：
 
 - 你站在山坡的某个位置（当前的 $m,c$）；
 - 山顶是"表现最好"的点；
@@ -619,18 +751,22 @@ $$J(m,c)=\frac1n\sum_{i=1}^{n}\big(y_i-(mx_i+c)\big)^2.$$
 
 > **原文**：Training – following the slope
 
-**中文**：训练——沿着斜率走。
+**中文**
+
+训练——沿着斜率走。
 
 ![山峰照片：训练就像沿着山坡一步步走](images/L1_p26_fig3.png)
 
-**讲解**：如果你在浓雾中的山上，只能看到脚边一小块地：
+**讲解**
+
+如果你在浓雾中的山上，只能看到脚边一小块地：
 
 1. 用脚探一探，找到**最陡的下坡方向**；
 2. 朝那个方向走一小步；
 3. 停下来，再探一次；
 4. 重复，直到走到谷底（或走不动了）。
 
-这就是**梯度下降（gradient descent）**。"一小步"的大小叫**学习率（learning rate）**。
+这就是**Gradient Descent（梯度下降）**。"一小步"的大小叫**Learning Rate（学习率）**。
 
 ---
 
@@ -642,9 +778,13 @@ $$J(m,c)=\frac1n\sum_{i=1}^{n}\big(y_i-(mx_i+c)\big)^2.$$
 
 ![在 (m,c) 平面上寻找最优参数：局部最优 vs 全局最优](images/L1_p27_diagram.png)
 
-**中文**：你从某处出发，想到达山顶（误差最小）；那数据呢？
+**中文**
 
-**讲解**：这一页把视角从"数据空间"换到"**参数空间**"：
+你从某处出发，想到达山顶（误差最小）；那数据呢？
+
+**讲解**
+
+这一页把视角从"数据空间"换到"**参数空间**"：
 
 - 横轴是 $m$，纵轴是 $c$；
 - 每一个点 $(m,c)$ 对应一条直线；
@@ -658,10 +798,14 @@ $$J(m,c)=\frac1n\sum_{i=1}^{n}\big(y_i-(mx_i+c)\big)^2.$$
 
 **图中左右两幅图的区别**（这是本页最值得看的地方）：
 
-- 左图：起点在左边的小黑坑附近，梯度下降滑进了这个**局部最优（local minimum）**，再也出不来——它误以为这就是最低点。
-- 右图：起点不同，路径绕过了小坑，最终到达中心的**全局最优（global minimum）**。
+- 左图：起点在左边的小黑坑附近，梯度下降滑进了这个**Local Minimum（局部最优）**，再也出不来——它误以为这就是最低点。
+- 右图：起点不同，路径绕过了小坑，最终到达中心的**Global Minimum（全局最优）**。
 
-**直觉**：局部最优 = "附近最低的山谷"，全局最优 = "整个地形最低的山谷"。在真实的高维损失曲面里，还可能出现**鞍点（saddle point）**——某个方向是下坡、另一个方向是上坡，梯度接近 0 但并不是最优。
+**直觉**：
+
+- **Local Minimum（局部最优）** = "附近最低的山谷"。
+- **Global Minimum（全局最优）**：整个地形最低的山谷。
+- **Saddle Point（鞍点）**：某个方向是下坡、另一个方向是上坡；梯度接近 0，但并不是最优。高维损失曲面里很常见。
 
 > 实践中的对策：随机初始化多个起点、用带动量的优化器（Momentum/Adam）、学习率预热与衰减。这些在 L8–L10 会展开。
 
@@ -673,9 +817,9 @@ $$J(m,c)=\frac1n\sum_{i=1}^{n}\big(y_i-(mx_i+c)\big)^2.$$
 
 ![损失曲线与切线](images/L1_p28_fig4.png)
 
-**中文**：训练——沿着斜率走。
+**中文**
 
-**从单变量到多参数**：损失通常依赖多个参数。对每个参数分别求偏导（固定其他参数，只对一个求导），再排成向量，就是**梯度**：
+训练——沿着斜率走。
 
 $$\nabla J(\theta)=\left(\frac{\partial J}{\partial\theta_1},\dots,\frac{\partial J}{\partial\theta_p}\right)^T.$$
 
@@ -683,7 +827,9 @@ $$\nabla J(\theta)=\left(\frac{\partial J}{\partial\theta_1},\dots,\frac{\partia
 - 一维时退化为普通导数：$J'(\theta)>0$ 往左走，$J'(\theta)<0$ 往右走。
 - 几何上，梯度垂直于等高线（记住结论即可；证明需要多元微积分，后面再学）。
 
-**为什么沿负梯度走能下降**：直观上，每个参数分量都朝"让自己对应的损失变小"的方向挪一小步；只要步长足够小，总体损失就会下降。严格证明需要多元微积分/最优化，本课不要求。
+**为什么沿负梯度走能下降**：直观上，每个参数分量都朝"让自己对应的损失变小"的方向挪一小步；只要步长足够小，总体损失就会下降。
+
+> 严格证明需要多元微积分/最优化，本课不要求。
 
 ---
 
@@ -694,9 +840,13 @@ $$\nabla J(\theta)=\left(\frac{\partial J}{\partial\theta_1},\dots,\frac{\partia
 
 ![梯度下降：从初始权重一步步走到最低成本](images/L1_p29_fig3.png)
 
-**中文**：梯度下降。初始权重 / 增量步 / 梯度 / 成本导数 / 最小成本。
+**中文**
 
-**读图**：横轴是参数 $w$（也可以是整个参数向量），纵轴是损失 $J(w)$；黑点是当前 $\theta_t$，虚线是切线（斜率 $J'(\theta_t)$），箭头是每步位移 $-\eta J'(\theta_t)$，最低点满足 $J'(\theta)=0$。
+梯度下降。初始权重 / 增量步 / 梯度 / 成本导数 / 最小成本。
+
+- 横轴：参数 $w$（也可以是整个参数向量）；纵轴：损失 $J(w)$。
+- 黑点：当前参数 $\theta_t$；虚线：切线，斜率 $J'(\theta_t)$；箭头：每步位移 $-\eta J'(\theta_t)$。
+- 最低点：满足 $J'(\theta)=0$ 的位置。
 
 **更新式**：
 
@@ -727,7 +877,13 @@ $$\frac{\partial J}{\partial c}=-\frac{2}{n}\sum_{i=1}^{n}\big(y_i-(mx_i+c)\big)
 - 第二式：残差直接求和（$c$ 对每个样本的系数都是 1）；
 - 负号来自 $y_i-(mx_i+c)$ 对 $m$ 求导得到 $-x_i$。
 
-**学习率的直觉**：$\eta$ 太大时，一步可能跨过谷底，导致震荡甚至发散；$\eta$ 太小时，收敛很慢。合适的值通常要试（如 0.001、0.01、0.1）。严格的学习率上界涉及最优化理论，本课不要求。
+**Learning Rate（学习率）的直觉**：
+
+- $\eta$ 太大：一步可能跨过谷底 → 震荡甚至发散。
+- $\eta$ 太小：收敛很慢，走半天到不了。
+- 合适的值通常要试：0.001、0.01、0.1。
+
+> 严格的学习率上界涉及最优化理论，本课不要求。
 
 **手算一遍（固定 $c=0$）**：数据 $(1,2),(2,4),(3,6)$，初始 $m=0$，学习率 $\eta=0.05$。
 
@@ -754,9 +910,9 @@ $$\frac{dJ}{dm}=-\frac23\big[1(2-m)+2(4-2m)+3(6-3m)\big]=-\frac23(28-14m)$$
 > 常见做法：从 $0.001$ 或 $0.01$ 试起，或用 Adam 等自适应优化器（后面讲）。
 
 **三个必须分清的概念**：
-- **参数（parameter）**：模型自己学，如 $m,c$、神经网络权重。
-- **超参数（hyperparameter）**：人来设，如学习率、KNN 的 $K$、层数。
-- **迭代（iteration）**：更新一次参数；**epoch**：把训练集完整过一遍。
+- **Parameter（参数）**：模型自己学，如 $m,c$、神经网络权重。
+- **Hyperparameter（超参数）**：人来设，如学习率、KNN 的 $K$、层数。
+- **Iteration（迭代）**：更新一次参数；**epoch**：把训练集完整过一遍。
 
 ---
 
@@ -767,9 +923,13 @@ $$\frac{dJ}{dm}=-\frac23\big[1(2-m)+2(4-2m)+3(6-3m)\big]=-\frac23(28-14m)$$
 
 ![二维参数空间中的负梯度方向](images/L1_p30_fig3.png)
 
-**中文**：梯度下降。负梯度方向 / 原始权重 / $w_1$ / $w_2$。
+**中文**
 
-**讲解**：当模型有两个参数 $w_1,w_2$ 时，损失地形是一个**曲面**（图上用颜色表示高度：红=高损失，蓝=低损失）。
+梯度下降。负梯度方向 / 原始权重 / $w_1$ / $w_2$。
+
+**讲解**
+
+当模型有两个参数 $w_1,w_2$ 时，损失地形是一个**曲面**（图上用颜色表示高度：红=高损失，蓝=低损失）。
 
 - 白点：当前参数；
 - 白色箭头：**负梯度方向**，即最陡的下坡方向；
@@ -785,9 +945,13 @@ $$\frac{dJ}{dm}=-\frac23\big[1(2-m)+2(4-2m)+3(6-3m)\big]=-\frac23(28-14m)$$
 
 > **原文**：Try deep learning on a browser: http://playground.tensorflow.org/
 
-**中文**：在浏览器里试深度学习：http://playground.tensorflow.org/
+**中文**
 
-**讲解**：这是 Google 做的一个教学玩具，强烈建议你打开玩 10 分钟：
+在浏览器里试深度学习：http://playground.tensorflow.org/
+
+**讲解**
+
+这是 Google 做的一个教学玩具，强烈建议你打开玩 10 分钟：
 
 - 左侧选数据集（两个圆、螺旋、异或）；
 - 中间选特征（$X_1,X_2,X_1^2,\dots$）、隐藏层数和神经元数；
@@ -814,9 +978,12 @@ $$\frac{dJ}{dm}=-\frac23\big[1(2-m)+2(4-2m)+3(6-3m)\big]=-\frac23(28-14m)$$
 > • The Dartmouth Workshop (1956): brought together researchers who aimed to simulate human intelligence using computers.
 > • Early Neural Networks: developed the concept of perceptrons, which were basic artificial neurons capable of learning. However, perceptrons had limitations, and interest in neural networks declined due to their inability to solve complex problems.
 
-**中文**：1956 年达特茅斯会议，聚集了希望用计算机模拟人类智能的研究者。早期神经网络提出了**感知机（perceptron）**——能学习的基本人工神经元；但感知机有局限（连 XOR 都解决不了），无法处理复杂问题，研究兴趣下降。
+**中文**
 
-**讲解**：
+- 1956 年达特茅斯会议，聚集了希望用计算机模拟人类智能的研究者。
+- 早期神经网络提出了**Perceptron（感知机）**——能学习的基本人工神经元；但感知机有局限（连 XOR 都解决不了），无法处理复杂问题，研究兴趣下降。
+
+**讲解**
 
 - **1956 达特茅斯会议**：通常被视为"人工智能"作为学科的起点。
 - **感知机（1958, Rosenblatt）**：最早的人工神经元。它做一件事：把输入加权求和，超过阈值就输出 1，否则 0。
@@ -835,12 +1002,15 @@ $$y=\begin{cases}1 & \text{若 }\sum_i w_ix_i+b>0\\0 & \text{否则}\end{cases}$
 > • Symbolic AI and Expert Systems: using explicit rules and logic to solve problems with knowledge bases and reasoning engines
 > • The Backpropagation Algorithm (1986): developed by Geoffrey Hinton, David Rumelhart, and Ronald Williams, allowed for efficient training of multi-layered neural networks
 
-**中文**：符号 AI 与专家系统：用显式规则和逻辑，配合知识库与推理引擎解决问题。1986 年反向传播算法（Hinton、Rumelhart、Williams）使多层神经网络能够高效训练。
+**中文**
 
-**讲解**：
+- 符号 AI 与专家系统：用显式规则和逻辑，配合知识库与推理引擎解决问题。
+- 1986 年反向传播算法（Hinton、Rumelhart、Williams）使多层神经网络能够高效训练。
+
+**讲解**
 
 - **符号 AI**：人把知识写成规则，例如"如果发烧且咳嗽，则可能是感冒"。优点是解释性强，缺点是规则写不完、维护困难。
-- **反向传播（backpropagation）**：一种高效计算"每个参数对损失有多大责任"的方法。核心是**链式法则**：
+- **Backpropagation（反向传播）**：一种高效计算"每个参数对损失有多大责任"的方法。核心是**链式法则**：
 
 $$\frac{\partial J}{\partial w}=\frac{\partial J}{\partial \hat y}\cdot\frac{\partial \hat y}{\partial w}$$
 
@@ -857,13 +1027,17 @@ $$\frac{\partial J}{\partial w}=\frac{\partial J}{\partial \hat y}\cdot\frac{\pa
 > • Rise of Big Data and Data-Driven Approaches: led to increased interest in data-driven approaches, such as decision trees, random forests, and ensemble methods.
 > • Deep Learning and Neural Networks: multiple layers, achieved remarkable success in various domains, including computer vision, natural language processing, and speech recognition.
 
-**中文**：支持向量机（SVM）通过寻找最优决策边界来分类，很流行。大数据与数据驱动方法兴起：决策树、随机森林、集成方法。深度学习与神经网络：多层结构在计算机视觉、自然语言处理、语音识别等领域取得显著成功。
+**中文**
 
-**讲解**：
+- Support Vector Machine (SVM，支持向量机)通过寻找最优决策边界来分类，很流行。
+- 大数据与数据驱动方法兴起：决策树、随机森林、集成方法。
+- 深度学习与神经网络：多层结构在计算机视觉、自然语言处理、语音识别等领域取得显著成功。
 
-- **SVM**：不仅找一条能分开的线，还要找"**间隔最大**"的那条线（最稳妥）。核技巧（kernel）还能处理非线性。
+**讲解**
+
+- **SVM**：不仅找一条能分开的线，还要找"**间隔最大**"的那条线（最稳妥）。Kernel Trick（核技巧）还能处理非线性。
 - **决策树/随机森林**：一系列 if-else 问题；随机森林是很多棵树的投票。
-- **集成（ensemble）**：三个臭皮匠，顶个诸葛亮。
+- **Ensemble（集成）**：三个臭皮匠，顶个诸葛亮。
 
 ---
 
@@ -874,12 +1048,13 @@ $$\frac{\partial J}{\partial w}=\frac{\partial J}{\partial \hat y}\cdot\frac{\pa
 > • Generative Adversarial Networks (GANs): a generator network against a discriminator network in a zero-sum game framework, enabling realistic image synthesis and data augmentation.
 > • The Transformer Architecture: by replacing recurrent structures with multi-head self-attention mechanisms, Transformers enabled massive parallelization during training and became the foundational architecture for modern NLP and vision.
 
-**中文**：
+**中文**
+
 - **AlexNet**：用 GPU 训练的 CNN 在 ImageNet 比赛上大幅领先，点燃现代深度学习热潮，让计算机视觉从"手工特征"转向"学习特征"。
 - **GAN**：生成器 vs 判别器的零和博弈，能合成逼真图像、做数据增强。
 - **Transformer**：用多头自注意力替代循环结构，训练时可大规模并行，成为现代 NLP 与视觉的基础架构。
 
-**讲解**：
+**讲解**
 
 - **2012 AlexNet** 是深度学习的"iPhone 时刻"。在此之前，图像识别靠 SIFT、HOG 等手工特征；之后，端到端 CNN 全面胜出。
 - **GAN 的直觉**：生成器是"造假币的"，判别器是"验钞的"。两者互相竞争，造假技术越来越真。
@@ -894,16 +1069,17 @@ $$\frac{\partial J}{\partial w}=\frac{\partial J}{\partial \hat y}\cdot\frac{\pa
 > • Denoising Diffusion Probabilistic Models (DDPMs) surpassed GANs in visual generation quality. Systems like Latent Diffusion (Stable Diffusion) made high-fidelity text-to-image synthesis efficient and accessible.
 > • OpenAI released ChatGPT, pairing Large Language Models with Reinforcement Learning from Human Feedback (RLHF). This unlocked highly coherent instruction-following and conversational interactions, triggering widespread enterprise and consumer adoption.
 
-**中文**：
+**中文**
+
 - GPT-3（1750 亿参数）证明：规模化自回归 Transformer 具备强 few-shot / zero-shot 能力，无需针对每个任务微调。
 - DDPM（去噪扩散概率模型）在视觉生成质量上超过 GAN；Latent Diffusion（Stable Diffusion）让高质量文生图高效且易用。
-- ChatGPT 把 LLM 与人类反馈强化学习（RLHF）结合，实现高度连贯的指令遵循与对话，引发广泛采用。
+- ChatGPT 把 LLM 与Reinforcement Learning from Human Feedback (RLHF，人类反馈强化学习)结合，实现高度连贯的指令遵循与对话，引发广泛采用。
 
-**讲解**：
+**讲解**
 
 - **few-shot / zero-shot**：只给几个例子（few-shot）甚至不给例子（zero-shot），模型就能做新任务。
-- **自回归（autoregressive）**：一个词一个词地预测下一个词。
-- **扩散模型（diffusion）**：先给图片加噪声，再学着从噪声里一步步"去噪"还原图片。Stable Diffusion 在"潜空间"里做，所以快。
+- **Autoregressive（自回归）**：一个词一个词地预测下一个词。
+- **Diffusion Model（扩散模型）**：先给图片加噪声，再学着从噪声里一步步"去噪"还原图片。Stable Diffusion 在"潜空间"里做，所以快。
 - **RLHF**：先用人类偏好数据训练一个"打分员"，再用强化学习让模型输出更符合人类喜好的回答。ChatGPT 的"会聊天"很大程度来自这一步。
 
 ---
@@ -914,11 +1090,14 @@ $$\frac{\partial J}{\partial w}=\frac{\partial J}{\partial \hat y}\cdot\frac{\pa
 > • Machine learning shifted toward natively multimodal architectures capable of processing text, vision, audio, and code simultaneously. Advances in reasoning-focused architectures, Mixture of Experts (MoE), parameter-efficient fine-tuning (PEFT)
 > • Agentic Workflow: Decomposes complex tasks via chain-of-thought, tree-of-thought, or self-reflection loops to correct errors dynamically. Implemented the capacity to execute external tools including code interpreters, web search, API endpoints, databases, and filesystem operations.
 
-**中文**：机器学习转向原生多模态架构，能同时处理文本、视觉、音频和代码；推理导向架构、混合专家（MoE）、参数高效微调（PEFT）取得进展。Agentic 工作流：通过思维链、思维树或自我反思循环分解复杂任务并动态纠错；能调用外部工具，包括代码解释器、网页搜索、API、数据库和文件系统。
+**中文**
 
-**讲解**：
+- 机器学习转向原生多模态架构，能同时处理文本、视觉、音频和代码；推理导向架构、Mixture of Experts (MoE，混合专家)、Parameter-Efficient Fine-Tuning (PEFT，参数高效微调)取得进展。
+- Agentic 工作流：通过思维链、思维树或自我反思循环分解复杂任务并动态纠错；能调用外部工具，包括代码解释器、网页搜索、API、数据库和文件系统。
 
-- **多模态（multimodal）**：一个模型同时理解图、文、音、视频。
+**讲解**
+
+- **Multimodal（多模态）**：一个模型同时理解图、文、音、视频。
 - **MoE**：模型里有很多"专家"子网络，每次只激活少数几个，参数量大但计算量可控。
 - **PEFT**：不重训整个大模型，只训练一小部分（如 LoRA），省显存。
 - **Agentic workflow**：AI 不只回答，还会"规划→调用工具→看结果→纠错"。
@@ -937,12 +1116,14 @@ $$\frac{\partial J}{\partial w}=\frac{\partial J}{\partial \hat y}\cdot\frac{\pa
 
 ![机器学习四大方向](images/L1_p38_fig3.png)
 
-**中文**：联邦学习 / 强化学习 / 生成式 AI / 大语言模型。
+**中文**
 
-**讲解**：
+联邦学习 / 强化学习 / 生成式 AI / 大语言模型。
 
-- **联邦学习（Federated Learning）**：数据留在本地（手机、医院），只上传模型更新，保护隐私。
-- **强化学习（RL）**：智能体通过"奖励/惩罚"试错学习，像训练小狗。
+**讲解**
+
+- **Federated Learning（联邦学习）**：数据留在本地（手机、医院），只上传模型更新，保护隐私。
+- **Reinforcement Learning (RL，强化学习)**：智能体通过"奖励/惩罚"试错学习，像训练小狗。
 - **生成式 AI**：生成新内容（图、文、音）。
 - **LLM**：海量文本训练的大语言模型。
 
@@ -956,11 +1137,15 @@ $$\frac{\partial J}{\partial w}=\frac{\partial J}{\partial \hat y}\cdot\frac{\pa
 
 ![Agentic AI 循环](images/L1_p39_fig3.png)
 
-**中文**：智能体 AI。
+**中文**
 
-**讲解**：一个 agent 通常包含：
+智能体 AI。
 
-1. **感知（Perceive）**：读取用户请求、工具返回结果。
+**讲解**
+
+一个 agent 通常包含：
+
+1. **Perceive（感知）**：读取用户请求、工具返回结果。
 2. **规划（Plan）**：把大任务拆成小步骤（思维链）。
 3. **行动（Act）**：调用搜索、代码、API。
 4. **观察（Observe）**：看工具输出。
@@ -978,9 +1163,13 @@ $$\frac{\partial J}{\partial w}=\frac{\partial J}{\partial \hat y}\cdot\frac{\pa
 
 > **原文**：Course Introduction / What are machine learning / Supervised Learning and KNN
 
-**中文**：课程介绍 / 什么是机器学习 / 监督学习与 KNN。
+**中文**
 
-**讲解**：前两部分是"什么是 ML"和"怎么训练"，从这里开始进入**监督学习的具体例子**：用"家庭用车"这个二分类问题，把特征、假设、噪声、过拟合串起来。
+课程介绍 / 什么是机器学习 / 监督学习与 KNN。
+
+**讲解**
+
+前两部分是"什么是 ML"和"怎么训练"，从这里开始进入**监督学习的具体例子**：用"家庭用车"这个二分类问题，把特征、假设、噪声、过拟合串起来。
 
 ---
 
@@ -995,14 +1184,20 @@ $$\frac{\partial J}{\partial w}=\frac{\partial J}{\partial \hat y}\cdot\frac{\pa
 > • Represent each car $x$ as a feature vector $x=(x_1,x_2,\dots,x_n)^T$
 > • e.g., $x_1$ = price, $x_2$ = engine power.
 
-**中文**：目标：从所有汽车中识别"家庭用车"。类别 1 = 家庭用车；类别 0 = 其他。特征工程：找出所有类别 1 都有、而类别 0 没有的特征。预测：一辆不在训练数据里的车 $x$，是不是家庭用车？把每辆车表示成特征向量 $x=(x_1,x_2,\dots,x_n)^T$，例如 $x_1$=价格，$x_2$=发动机功率。
+**中文**
+
+- 目标：从所有汽车中识别"家庭用车"。
+- 类别 1 = 家庭用车；类别 0 = 其他。
+- 特征工程：找出所有类别 1 都有、而类别 0 没有的特征。
+- 预测：一辆不在训练数据里的车 $x$，是不是家庭用车？
+- 把每辆车表示成特征向量 $x=(x_1,x_2,\dots,x_n)^T$，例如 $x_1$=价格，$x_2$=发动机功率。
 
 ![家庭用车](images/L1_p41_fig3.png)
 
-**讲解**：
+**讲解**
 
-- **特征（feature）**：描述一个物体的可量化属性。车：价格、功率、座位数、油耗、车长。
-- **特征向量（feature vector）**：把多个特征排成一列。
+- **Feature（特征）**：描述一个物体的可量化属性。车：价格、功率、座位数、油耗、车长。
+- **Feature Vector（特征向量）**：把多个特征排成一列。
 
 $$x=\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix},\qquad x^T=[x_1,x_2,\dots,x_n]$$
 
@@ -1010,7 +1205,7 @@ $$x=\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix},\qquad x^T=[x_1,x_2,\dots,
 
 **例子**：一辆车 $x=(18\text{ 万}, 150\text{ 马力})^T$。
 
-> **特征工程（feature engineering）** 是传统机器学习的关键：选对特征，模型事半功倍；选错特征（比如用"车漆颜色"判断家庭用车），模型学不到东西。深度学习的一大优势就是**自动学特征**。
+> **Feature Engineering（特征工程）** 是传统机器学习的关键：选对特征，模型事半功倍；选错特征（比如用"车漆颜色"判断家庭用车），模型学不到东西。深度学习的一大优势就是**自动学特征**。
 
 ---
 
@@ -1023,11 +1218,16 @@ $$x=\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix},\qquad x^T=[x_1,x_2,\dots,
 > • Class label:
 >   $$y=\begin{cases}1 & \text{for family cars }(+)\\0 & \text{for others }(-)\end{cases}$$
 
-**中文**：$n$ 个样本的集合：$S_{train}=\{(x_1,y_1),\dots,(x_n,y_n)\}$。每个 $(x_i,y_i)$ 是一辆车。特征向量（2 个特征）：$x_i=(f_{i1},f_{i2})$。类别标签：家庭用车为 1（正类），其他为 0（负类）。
+**中文**
+
+- $n$ 个样本的集合：$S_{train}=\{(x_1,y_1),\dots,(x_n,y_n)\}$。
+- 每个 $(x_i,y_i)$ 是一辆车。
+- 特征向量（2 个特征）：$x_i=(f_{i1},f_{i2})$。
+- 类别标签：家庭用车为 1（正类），其他为 0（负类）。
 
 ![训练集散点图](images/L1_p42_fig3.png)
 
-**讲解**：
+**讲解**
 
 - **训练集**就是"带答案的题库"。
 - $x_i$：第 $i$ 辆车的特征；$y_i$：它的答案（0 或 1）。
@@ -1052,14 +1252,20 @@ $$x=\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix},\qquad x^T=[x_1,x_2,\dots,
 
 ![用矩形假设类覆盖家庭用车](images/L1_p43_fig3.png)
 
-**中文**：矩形对应一个模型（也叫假设），由 4 个点确定：$(p_1,e_1),(p_2,e_1),(p_1,e_2),(p_2,e_2)$。学习算法找到一个假设 $h$，尽可能逼近真实类别 $C$。要确保假设类 $H$ 足够灵活（有足够容量）来学习 $C$，即找到尽可能接近 $C$ 的 $h$。
+**中文**
 
-**讲解**：这一页有几个关键区分：
+- 矩形对应一个模型（也叫假设），由 4 个点确定：$(p_1,e_1),(p_2,e_1),(p_1,e_2),(p_2,e_2)$。
+- 学习算法找到一个假设 $h$，尽可能逼近真实类别 $C$。
+- 要确保假设类 $H$ 足够灵活（有足够容量）来学习 $C$，即找到尽可能接近 $C$ 的 $h$。
+
+**讲解**
+
+这一页有几个关键区分：
 
 | 符号 | 含义 | 通俗说法 |
 |---|---|---|
-| $C$ | 真实概念（true concept） | "家庭用车"的客观标准 |
-| $H$ | 假设空间（hypothesis class） | 我们**允许**模型长什么样，比如"所有轴对齐矩形" |
+| $C$ | True Concept（真实概念） | "家庭用车"的客观标准 |
+| $H$ | Hypothesis Class（假设类） | 我们**允许**模型长什么样，比如"所有轴对齐矩形" |
 | $h$ | 一个具体假设 | 某一个具体的矩形 |
 
 - **矩形**由 4 个边界确定：左 $p_1$、右 $p_2$、下 $e_1$、上 $e_2$。
@@ -1077,7 +1283,7 @@ $$H=\left\{h_{p_1,p_2,e_1,e_2}:\ p_1<p_2,\ e_1<e_2\right\}.$$
 
 学习算法在这个 4 参数族里选一个 $h$。参数越多、边界越灵活，容量越大。容量的精确定义超出本讲，先用"能画出多少种边界形状"来理解即可。
 
-- **容量（capacity）**：$H$ 能表达多少种不同的形状。
+- **Capacity（容量）**：$H$ 能表达多少种不同的形状。
   - 矩形容量小 → 只能表达"价格和功率都在某范围内"，简单但可能不够。
   - 任意曲线容量大 → 能拟合复杂边界，但容易过拟合。
 
@@ -1102,14 +1308,17 @@ $$H=\left\{h_{p_1,p_2,e_1,e_2}:\ p_1<p_2,\ e_1<e_2\right\}.$$
 
 ![简单矩形 vs 复杂曲线](images/L1_p44_fig3.png)
 
-**中文**：噪声来源：测量（输入）、标注（输出）、隐藏属性。更简单的矩形（线性）模型更可取：计算复杂度低、训练更容易且空间复杂度低、更容易解释（可解释性高）、泛化更好且方差更低（奥卡姆剃刀）。
+**中文**
 
-**讲解**：
+- 噪声来源：测量（输入）、标注（输出）、隐藏属性。
+- 更简单的矩形（线性）模型更可取：计算复杂度低、训练更容易且空间复杂度低、更容易解释（可解释性高）、泛化更好且方差更低（奥卡姆剃刀）。
+
+**讲解**
 
 **三类噪声**：
 1. **测量噪声（input）**：传感器误差。价格记错、秤不准。
 2. **标注噪声（output）**：人标错了。把豪华车标成家庭车。
-3. **隐藏属性（hidden attributes）**：影响结果但没记录的因素。比如"车主是否二胎"——它影响买不买家庭车，但你的特征里没有。
+3. **Hidden Attributes（隐藏属性）**：影响结果但没记录的因素。比如"车主是否二胎"——它影响买不买家庭车，但你的特征里没有。
 
 > 噪声让"100% 正确"变得不可能。模型要学会**忽略噪声、抓住规律**，而不是死记每个点。
 
@@ -1124,8 +1333,8 @@ $$H=\left\{h_{p_1,p_2,e_1,e_2}:\ p_1<p_2,\ e_1<e_2\right\}.$$
 | 偏差 | 高 | 低 |
 
 - **奥卡姆剃刀（Occam's razor）**：同样能解释数据时，选更简单的假设。
-- **方差（variance）**：换一批训练数据，模型变化有多大。复杂模型对数据太敏感，方差大。
-- **偏差（bias）**：模型本身的假设与真实规律的差距。简单模型假设太强，偏差大。
+- **Variance（方差）**：换一批训练数据，模型变化有多大。复杂模型对数据太敏感，方差大。
+- **Bias（偏差）**：模型本身的假设与真实规律的差距。简单模型假设太强，偏差大。
 
 > 图中灰色矩形是简单模型，黑色波浪线是复杂模型。波浪线把每个训练点都圈进去了，但它学到的很可能是**噪声**，换个数据集就崩了。
 
@@ -1139,9 +1348,13 @@ $$H=\left\{h_{p_1,p_2,e_1,e_2}:\ p_1<p_2,\ e_1<e_2\right\}.$$
 
 ![跑车、豪华轿车、家庭用车的分布与重叠](images/L1_p45_diagram.png)
 
-**中文**：跑车 / 豪华轿车 / 家庭用车 / 价格 / 发动机功率 / ？
+**中文**
 
-**讲解**：这张图说明**现实中的类别经常重叠**：
+跑车 / 豪华轿车 / 家庭用车 / 价格 / 发动机功率 / ？
+
+**讲解**
+
+这张图说明**现实中的类别经常重叠**：
 
 - **家庭用车**：价格低、功率低（左下）。
 - **跑车**：价格中高、功率高（上方）。
@@ -1168,14 +1381,20 @@ $$H=\left\{h_{p_1,p_2,e_1,e_2}:\ p_1<p_2,\ e_1<e_2\right\}.$$
 > • For different hyperparameters / models, measure the performance with the validation data
 > • With the best hyperparameters / models, measure using testing data (in this course, it is the submission)
 
-**中文**：只用训练数据构建和训练模型，用验证数据衡量性能；对不同超参数/模型，用验证数据衡量；用最好的超参数/模型，在测试数据上衡量（本课程中就是提交结果）。
+**中文**
 
-**讲解**：这是**机器学习最重要的纪律**：
+- 只用训练数据构建和训练模型，用验证数据衡量性能。
+- 对不同超参数/模型，用验证数据衡量。
+- 用最好的超参数/模型，在测试数据上衡量（本课程中就是提交结果）。。
+
+**讲解**
+
+这是**机器学习最重要的纪律**：
 
 ```
-训练集（Training）    → 用来更新参数（模型"看书学习"）
-验证集（Validation）  → 用来选超参数/选模型（"模拟考"）
-测试集（Test）        → 最后只测一次（"高考"）
+Training Set（训练集）    → 用来更新参数（模型"看书学习"）
+Validation Set（验证集）  → 用来选超参数/选模型（"模拟考"）
+Test Set（测试集）        → 最后只测一次（"高考"）
 ```
 
 **为什么不能拿测试集调参？** 因为一旦你用测试集选了模型，测试集的信息就"泄漏"进模型了，它就不再是"没见过的数据"，你得到的分数会**虚高**。
@@ -1191,9 +1410,13 @@ $$H=\left\{h_{p_1,p_2,e_1,e_2}:\ p_1<p_2,\ e_1<e_2\right\}.$$
 
 ![训练/验证/测试集划分](images/L1_p47_fig3.png)
 
-**中文**：训练数据 / 验证数据 / 测试数据；教科书 / 作业 / 公开考试。
+**中文**
 
-**讲解**：老师的类比非常准确：
+训练数据 / 验证数据 / 测试数据；教科书 / 作业 / 公开考试。
+
+**讲解**
+
+老师的类比非常准确：
 
 - **训练集 = 教科书**：你可以在上面反复学习、做笔记。
 - **验证集 = 作业**：用来检查自己哪里没懂，可以反复做、对答案。
@@ -1202,14 +1425,14 @@ $$H=\left\{h_{p_1,p_2,e_1,e_2}:\ p_1<p_2,\ e_1<e_2\right\}.$$
 **常见划分比例**：
 - 小数据：60% / 20% / 20%，或 70% / 15% / 15%。
 - 大数据：98% / 1% / 1%（数据够多时，验证/测试不需要很大）。
-- 交叉验证（cross-validation）：数据少时，把训练集分成 $K$ 份，轮流拿一份做验证（后面课会讲）。
+- Cross-Validation（交叉验证）：数据少时，把训练集分成 $K$ 份，轮流拿一份做验证（后面课会讲）。
 
 **三条铁律**：
 1. 测试集**绝不**参与训练或调参。
 2. 预处理（如标准化）的参数（均值、方差）只能从**训练集**算，再应用到验证/测试集。
 3. 划分要**随机且分层**（保持各类比例），避免某一类全在测试集。
 
-> 第 2 条叫"数据泄漏（data leakage）"，是初学者最常犯的错误之一。比如你先用全部数据算均值再标准化，测试集的信息就漏进训练了。
+> 第 2 条叫"Data Leakage（数据泄漏）"，是初学者最常犯的错误之一。比如你先用全部数据算均值再标准化，测试集的信息就漏进训练了。
 
 ---
 
@@ -1223,9 +1446,14 @@ $$H=\left\{h_{p_1,p_2,e_1,e_2}:\ p_1<p_2,\ e_1<e_2\right\}.$$
 
 ![训练误差与测试误差随 epoch 变化](images/L1_p48_fig3.png)
 
-**中文**：训练集误差：开始下降，之后饱和。测试集误差：开始也下降，但始终高于训练集，并在某一点之后**上升**（过拟合）。
+**中文**
 
-**讲解**：横轴是 **epoch**（把训练集完整过一遍的次数），纵轴是误差。
+- 训练集误差：开始下降，之后饱和。
+- 测试集误差：开始也下降，但始终高于训练集，并在某一点之后**上升**（过拟合）。
+
+**讲解**
+
+横轴是 **epoch**（把训练集完整过一遍的次数），纵轴是误差。
 
 - **训练误差**（蓝线）：一路下降，最后接近 0。因为模型在"背"训练数据。
 - **测试误差**（橙线）：先降后升，呈 **U 形**。
@@ -1237,7 +1465,7 @@ $$H=\left\{h_{p_1,p_2,e_1,e_2}:\ p_1<p_2,\ e_1<e_2\right\}.$$
 
 **实用技巧**：
 - **Early stopping**：在验证误差开始上升时停。
-- **正则化（regularization）**：给复杂度加惩罚。
+- **Regularization（正则化）**：给复杂度加惩罚。
 - **Dropout**：训练时随机"关掉"一些神经元。
 - **数据增强**：把图片旋转/裁剪，增加多样性。
 - **更多数据**：最有效，但最贵。
@@ -1253,13 +1481,15 @@ $$H=\left\{h_{p_1,p_2,e_1,e_2}:\ p_1<p_2,\ e_1<e_2\right\}.$$
 
 ![网格搜索 vs 随机搜索](images/L1_p49_fig3.png)
 
-**中文**：用网格搜索调参。网格布局 / 随机布局 / 重要参数 / 不重要参数。
+**中文**
 
-**讲解**：
+用网格搜索调参。网格布局 / 随机布局 / 重要参数 / 不重要参数。
 
-- **网格搜索（Grid Search）**：把每个超参数的候选值列出来，做**笛卡尔积**，逐一训练评估。
+**讲解**
+
+- **Grid Search（网格搜索）**：把每个超参数的候选值列出来，做**笛卡尔积**，逐一训练评估。
   - 例如学习率 $\{0.001,0.01,0.1\}$、层数 $\{1,2,3\}$ → 9 种组合。
-- **随机搜索（Random Search）**：在每个范围内随机采样若干组。
+- **Random Search（随机搜索）**：在每个范围内随机采样若干组。
 
 **为什么随机搜索有时更好？** 图中"重要参数"（横轴）影响大，"不重要参数"（纵轴）影响小。网格搜索会把大量预算浪费在不重要的维度上；随机搜索能在重要维度上覆盖更多不同值。
 
@@ -1300,7 +1530,9 @@ $$H=\left\{h_{p_1,p_2,e_1,e_2}:\ p_1<p_2,\ e_1<e_2\right\}.$$
 
 ![网格搜索代码](images/L1_p50_fig4.png)
 
-**中文**：网格搜索代码：初始化最优模型/损失/参数；遍历参数组合；训练；在 `no_grad` 下计算平均损失；若更好则记录；最后打印最优。
+**中文**
+
+网格搜索代码：初始化最优模型/损失/参数；遍历参数组合；训练；在 `no_grad` 下计算平均损失；若更好则记录；最后打印最优。
 
 **讲解**（逐行）：
 
@@ -1309,7 +1541,7 @@ $$H=\left\{h_{p_1,p_2,e_1,e_2}:\ p_1<p_2,\ e_1<e_2\right\}.$$
 - `train_model(...)`：用这组超参数训练一个模型。
 - `with torch.no_grad():`：评估时**不计算梯度**，省内存、加速。
 - `for batch_X, batch_y in train_loader`：一批一批地算损失。
-- `nn.MSELoss()(outputs, batch_y)`：均方误差。
+- `nn.MSELoss()(outputs, batch_y)`：MSE（均方误差）。
 - `total_loss += loss.item()`：`.item()` 把张量转成 Python 数字。
 - `avg_loss = total_loss / len(train_loader)`：平均每批损失。
 - `if avg_loss < best_loss:`：保留最好的。
@@ -1324,9 +1556,13 @@ $$H=\left\{h_{p_1,p_2,e_1,e_2}:\ p_1<p_2,\ e_1<e_2\right\}.$$
 
 ![训练误差与交叉验证误差随模型复杂度变化](images/L1_p51_fig3.png)
 
-**中文**：训练误差与交叉验证误差随模型复杂度变化的曲线。
+**中文**
 
-**讲解**：这张图和 P48 是同一件事的两种横轴：P48 横轴是训练时间（epoch），P51 横轴是模型复杂度（层数、参数数量、多项式阶数）。训练误差随复杂度单调下降，验证误差呈 U 形，最低点是"最佳复杂度"。
+训练误差与交叉验证误差随模型复杂度变化的曲线。
+
+**讲解**
+
+这张图和 P48 是同一件事的两种横轴：P48 横轴是训练时间（epoch），P51 横轴是模型复杂度（层数、参数数量、多项式阶数）。训练误差随复杂度单调下降，验证误差呈 U 形，最低点是"最佳复杂度"。
 
 **偏差-方差（直觉版）**：把测试误差拆成三部分看：
 
@@ -1359,19 +1595,25 @@ $$\text{测试误差}\approx \text{Bias}^2+\text{Variance}+\text{Noise}.$$
 > • Underfitting: H is less complex than C
 > • Model selection: choosing the right inductive bias.
 
-**中文**：学习是一个"不适定问题"；仅凭数据不足以找到唯一解；需要**归纳偏置**（对假设空间 $H$ 的假设）。**泛化**：学到的模型在新数据上的表现。**过拟合**：$H$ 比 $C$ 更复杂。**欠拟合**：$H$ 比 $C$ 更简单。**模型选择**：选择合适的归纳偏置。
+**中文**
+
+- 学习是一个"不适定问题"；仅凭数据不足以找到唯一解；需要**归纳偏置**（对假设空间 $H$ 的假设）。
+- **泛化**：学到的模型在新数据上的表现。
+- **过拟合**：$H$ 比 $C$ 更复杂。
+- **欠拟合**：$H$ 比 $C$ 更简单。
+- **模型选择**：选择合适的归纳偏置。
 
 ![过拟合与欠拟合](images/L1_p52_fig4.png)
 
-**讲解**：
+**讲解**
 
-**为什么"不适定（ill-posed）"？** 给你 5 个点，能穿过它们的曲线有**无穷多条**：
+**为什么"Ill-Posed（不适定）"？** 给你 5 个点，能穿过它们的曲线有**无穷多条**：
 
 - 一条直线（简单）；
 - 一个 4 次多项式（正好穿过 5 个点）；
 - 无数条弯弯曲曲的线。
 
-数据本身不能告诉你选哪条。你必须加**假设**，比如"我偏好简单的线"——这就是**归纳偏置（inductive bias）**。
+数据本身不能告诉你选哪条。你必须加**假设**，比如"我偏好简单的线"——这就是**Inductive Bias（归纳偏置）**。
 
 **常见归纳偏置**：
 - 线性回归：假设输出是输入的线性组合。
@@ -1405,9 +1647,13 @@ $$\text{测试误差}\approx \text{Bias}^2+\text{Variance}+\text{Noise}.$$
 
 ![模型选择：验证误差最低点](images/L1_p53_fig3.png)
 
-**中文**：模型选择。
+**中文**
 
-**讲解**：模型选择就是"在候选模型/超参数中，选验证误差最低的那个"。
+模型选择。
+
+**讲解**
+
+模型选择就是"在候选模型/超参数中，选验证误差最低的那个"。
 
 **标准流程**：
 
@@ -1431,9 +1677,13 @@ for 每个候选模型/超参数组合:
 
 > **原文**：How do we process the Big Data? Python!
 
-**中文**：我们如何处理大数据？Python！
+**中文**
 
-**讲解**：Python 是机器学习的"通用语言"，因为生态最全：NumPy（数值）、pandas（表格）、matplotlib（画图）、scikit-learn（传统 ML）、PyTorch（深度学习）。
+我们如何处理大数据？Python！
+
+**讲解**
+
+Python 是机器学习的"通用语言"，因为生态最全：NumPy（数值）、pandas（表格）、matplotlib（画图）、scikit-learn（传统 ML）、PyTorch（深度学习）。
 
 ---
 
@@ -1445,9 +1695,16 @@ for 每个候选模型/超参数组合:
 > • Cross platform: Mac, Windows and Unix
 > • Free and open-source
 
-**中文**：易用易维护；可移植，支持 GUI 编程；跨平台（Mac/Windows/Unix）；免费开源。
+**中文**
 
-**讲解**：这些是"为什么选 Python"的官方理由。实际体验：语法接近伪代码，社区大，遇到问题容易搜到答案。
+- 易用易维护。
+- 可移植，支持 GUI 编程。
+- 跨平台（Mac/Windows/Unix）。
+- 免费开源。。
+
+**讲解**
+
+这些是"为什么选 Python"的官方理由。实际体验：语法接近伪代码，社区大，遇到问题容易搜到答案。
 
 ---
 
@@ -1458,12 +1715,18 @@ for 每个候选模型/超参数组合:
 > • Support for large, multi-dimensional arrays and matrices
 > • Useful for linear algebra, Fourier transform, and random number capabilities
 
-**中文**：Python 的库；支持大型多维数组与矩阵；适用于线性代数、傅里叶变换和随机数。
+**中文**
 
-**讲解**：NumPy 的核心是 **`ndarray`（N 维数组）**。
+- Python 的库。
+- 支持大型多维数组与矩阵。
+- 适用于线性代数、傅里叶变换和随机数。。
+
+**讲解**
+
+NumPy 的核心是 **`ndarray`（N 维数组）**。
 
 - Python 原生 list 慢：每个元素都是对象，逐个循环。
-- NumPy 数组快：连续内存 + C 实现 + **向量化（vectorization）**。
+- NumPy 数组快：连续内存 + C 实现 + **Vectorization（向量化）**。
 
 ```python
 # 慢：Python 循环
@@ -1501,14 +1764,14 @@ a.shape        # (3,)
 c.shape        # (2, 3)
 ```
 
-**讲解**：
+**讲解**
 
 - `np.array([...])`：从 Python 列表创建数组。
 - `np.arange(start, stop, step)`：左闭右开，和 `range` 一样。
 - `np.zeros((行, 列))`：创建矩阵。
 - `np.eye(n)`：单位矩阵（对角线为 1）。
 - `@`：矩阵乘法/点积。
-- **广播（broadcasting）**：`a + 1` 会把标量 1 自动"扩展"到每个元素。
+- **Broadcasting（广播）**：`a + 1` 会把标量 1 自动"扩展"到每个元素。
 
 > 形状（shape）是 NumPy 最容易出错的地方。记住：`(3,)` 是一维，`(3,1)` 是二维列向量，`(1,3)` 是二维行向量。
 
@@ -1532,9 +1795,11 @@ x.shape      # (2, 3)
 x.T          # 转置，形状 (3, 2)
 ```
 
-**中文**：索引从 0 开始，也支持负索引。
+**中文**
 
-**讲解**：
+索引从 0 开始，也支持负索引。
+
+**讲解**
 
 - `x[0, 0]`：第 0 行第 0 列（左上角）。
 - `x[0]`：第 0 行（省略列索引 = 整行）。
@@ -1568,9 +1833,9 @@ x.T          # 转置，形状 (3, 2)
 
 ![NumPy 练习代码](images/L1_p64_fig3.png)
 
-**中文**：成绩数组与国籍数组的 9 个练习。
+**中文**
 
-**讲解 + 参考答案**：
+成绩数组与国籍数组的 9 个练习。
 
 ```python
 import numpy as np
@@ -1637,9 +1902,13 @@ print(best_nat)                      # 2（均值 9.0）
 
 ![KNN 三步：测量、找邻居、聚合](images/L1_p59_fig3.png)
 
-**中文**：KNN 是一种"懒惰学习器"。训练时它不构建任何数学模型，只是记住数据集，把所有计算推迟到查询时刻。
+**中文**
 
-**讲解**：KNN 的"训练"几乎为零：
+KNN 是一种"懒惰学习器"。训练时它不构建任何数学模型，只是记住数据集，把所有计算推迟到查询时刻。
+
+**讲解**
+
+KNN 的"训练"几乎为零：
 
 - **训练阶段**：把 $(x_i,y_i)$ 全部存起来，结束。
 - **预测阶段**：来了一个新样本 $x$，计算它到所有训练样本的距离，找最近的 $K$ 个，投票/平均。
@@ -1687,7 +1956,8 @@ print(best_nat)                      # 2（均值 9.0）
 
 ![欧氏距离、曼哈顿距离、余弦相似度](images/L1_p60_fig3.png)
 
-**中文**：
+**中文**
+
 - 直线几何距离（欧氏）。
 - 坐标差绝对值之和（曼哈顿）。
 - 衡量方向一致性，忽略长度（余弦）。
@@ -1729,9 +1999,13 @@ print(best_nat)                      # 2（均值 9.0）
 
 ![A、B 两点：直线、折线、夹角](images/L1_p61_fig3.png)
 
-**中文**：KNN 算法依赖于" closeness（接近）"如何定义；改变度量空间的数学规则，会从根本上改变哪些邻居被认为最近。
+**中文**
 
-**讲解**：图中 A、B 两点：
+KNN 算法依赖于" closeness（接近）"如何定义；改变度量空间的数学规则，会从根本上改变哪些邻居被认为最近。
+
+**讲解**
+
+图中 A、B 两点：
 
 - **欧氏**：直接连直线（最短）。
 - **曼哈顿**：只能沿网格走折线（更长）。
@@ -1756,11 +2030,14 @@ print(best_nat)                      # 2（均值 9.0）
 
 ![原始数据 → 标准化 → 保留边界原型](images/L1_p62_fig3.png)
 
-**中文**：**标准化**：归一化坐标，防止大尺度变量主导距离。**浓缩最近邻（Condensed Nearest Neighbor, CNN）**：一种节省内存的技术，删除冗余的内部数据点，只保留维持决策精度所需的边界原型。
+**中文**
 
-**讲解**：
+- **标准化**：归一化坐标，防止大尺度变量主导距离。
+- **Condensed Nearest Neighbor (CNN，浓缩最近邻)**：一种节省内存的技术，删除冗余的内部数据点，只保留维持决策精度所需的边界原型。
 
-**(1) 标准化（Standardization / Z-score）**
+**讲解**
+
+**(1) Standardization（标准化 / Z-score）**
 
 $$z_j=\frac{x_j-\mu_j}{\sigma_j}.$$
 
@@ -1787,14 +2064,14 @@ $$\mu_j=\frac1n\sum_{i=1}^n x_{ij},\qquad
 
 > ⚠️ 标准化的 $\mu,\sigma$ 只能从**训练集**计算，然后应用到验证/测试集。否则数据泄漏。
 
-**(2) 浓缩最近邻（CNN）**
+**(2) Condensed Nearest Neighbor (CNN，浓缩最近邻)**
 
-> ⚠️ **术语陷阱**：这里的 **CNN = Condensed Nearest Neighbor**，不是卷积神经网络（Convolutional Neural Network）！同一门课后面 L5 会讲卷积神经网络，也是 CNN。**看上下文**。
+> ⚠️ **术语陷阱**：这里的 **CNN = Condensed Nearest Neighbor**，不是 Convolutional Neural Network (CNN，卷积神经网络)！同一门课后面 L5 会讲卷积神经网络，也是 CNN。**看上下文**。
 
 思路：
 - KNN 要存所有训练点，内存大、预测慢。
 - 但很多**内部点**对决策没用——它们被同类点包围，删掉也不影响边界。
-- 只保留**边界附近的原型（prototypes）**，就能维持差不多的精度。
+- 只保留**边界附近的Prototypes（原型）**，就能维持差不多的精度。
 
 ```
 原始数据（很多点） → 标准化 → 浓缩最近邻 → 只留边界点
@@ -1823,9 +2100,13 @@ $$\mu_j=\frac1n\sum_{i=1}^n x_{ij},\qquad
 | P3 | 3 | 4 | GOOD |
 | P4 | 1 | 4 | GOOD |
 
-**中文**：点 / 耐酸性 / 强度 / 分类。P1、P2 是 BAD；P3、P4 是 GOOD。
+**中文**
 
-**讲解**：这是一个二维二分类玩具数据。
+点 / 耐酸性 / 强度 / 分类。P1、P2 是 BAD；P3、P4 是 GOOD。
+
+**讲解**
+
+这是一个二维二分类玩具数据。
 
 - 特征：耐酸性（1–7）、强度（4–7）。
 - 标签：BAD / GOOD。
@@ -1889,15 +2170,16 @@ $K=3$：P2、P3、P4 → GOOD 2 票，BAD 1 票 → 预测 **GOOD**。
 >        [0.        , 1.        ],
 >        [0.        , 1.41421356],
 >        [0.        , 1.        ],
->        [0.        , 1.        ],
 >        [0.        , 1.41421356]])
 > ```
 
 ![sklearn NearestNeighbors 代码](images/L1_p63_fig3.png)
 
-**中文**：导入 `NearestNeighbors` 和 NumPy；创建 6 个二维点；用 `n_neighbors=2`、`ball_tree` 算法拟合；查询每个点的最近邻；输出索引和距离。
+**中文**
 
-**讲解**：
+导入 `NearestNeighbors` 和 NumPy；创建 6 个二维点；用 `n_neighbors=2`、`ball_tree` 算法拟合；查询每个点的最近邻；输出索引和距离。
+
+**讲解**
 
 - `X` 的 6 个点：左边三个（负坐标），右边三个（正坐标）。
 - `NearestNeighbors(n_neighbors=2)`：找最近的 2 个（**包括自己**）。
@@ -1944,9 +2226,13 @@ print(knn.kneighbors([[5, 5]]))     # 返回距离和索引
 > • prepare a python to collect the brand from https://www.lanecrawford.com.hk/
 > • Visualize the brand
 
-**中文**：用 Python 从 Lane Crawford 网站收集品牌，并可视化。
+**中文**
 
-**讲解**：这是一个"数据收集 → 可视化"的小项目，流程：
+用 Python 从 Lane Crawford 网站收集品牌，并可视化。
+
+**讲解**
+
+这是一个"数据收集 → 可视化"的小项目，流程：
 
 ```
 1. 用 requests 下载网页 HTML
@@ -1993,9 +2279,16 @@ plt.show()
 > • PyCharm: https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html#prerequisites
 > • Opencode: https://opencode.ai
 
-**中文**：NumPy 快速入门；PyCharm 创建并运行第一个 Python 项目；OpenCode 官网。
+**中文**
 
-**讲解**：建议顺序：
+- NumPy 快速入门。
+- PyCharm 创建并运行第一个 Python 项目。
+- OpenCode 官网。。
+
+**讲解**
+
+建议顺序：
+
 1. NumPy Quickstart（30 分钟，跟着敲）。
 2. PyCharm 建项目 + 虚拟环境（venv）。
 3. OpenCode 文档，试着让它读一个 CSV 并画图。
@@ -2010,9 +2303,16 @@ plt.show()
 > • Learn virtual environment and install library
 > • Run the example in this lecture
 
-**中文**：下节课带电脑；安装 OpenCode 和 PyCharm（专业版，学生免费）；学习虚拟环境并安装库；运行本讲示例。
+**中文**
 
-**讲解**：**虚拟环境（virtual environment）** 是什么？
+- 下节课带电脑。
+- 安装 OpenCode 和 PyCharm（专业版，学生免费）。
+- 学习虚拟环境并安装库。
+- 运行本讲示例。。
+
+**讲解**
+
+**虚拟环境（virtual environment）** 是什么？
 
 - 每个项目一个"独立的工具箱"，避免不同项目的库版本打架。
 - 常用命令：
@@ -2036,7 +2336,9 @@ pip install numpy scikit-learn matplotlib torch
 
 > **原文**：Questions? Email: pakmingcheung@cuhk.edu.hk
 
-**中文**：有问题？邮箱：pakmingcheung@cuhk.edu.hk
+**中文**
+
+有问题？邮箱：pakmingcheung@cuhk.edu.hk
 
 ---
 
@@ -2131,7 +2433,7 @@ pip install numpy scikit-learn matplotlib torch
 
 ## 与 L2 的衔接
 
-L2 会讲 **迁移学习（Transfer Learning）与 ResNet**。先埋三个伏笔：
+L2 会讲 **Transfer Learning（迁移学习）与 ResNet**。先埋三个伏笔：
 
 - L1 的"模型容量/过拟合"会在 ResNet 里以"更深的网络 + 残差连接"的形式出现。
 - L1 的"训练/验证/测试"会在迁移学习里变成"预训练/微调/评估"。
@@ -2143,3 +2445,13 @@ L2 会讲 **迁移学习（Transfer Learning）与 ResNet**。先埋三个伏笔
 > 3. KNN 为什么要标准化？$K$ 太大/太小会怎样？
 >
 > 如果这三题能讲清楚，L1 就过关了。
+
+---
+
+## 答疑记录
+
+本讲问答已独立成册：[`L1_qa.md`](L1_qa.md)
+
+- 收录内容：学生提问 + 完整解答 + 易错点（如 Q1 MSE、Q2 Regularization）。
+- 用途：notes 讲"课件说了什么"，QA 讲"你没懂的那一句到底是什么"。
+- 新增问题会持续追加，按 `Q编号` 索引。

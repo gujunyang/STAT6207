@@ -1,0 +1,1044 @@
+
+=====PAGE 1=====
+STAT6207 
+Applied Deep Learning
+L2, 18 Sep 2026
+By Dr. Ming Cheung
+1
+[IMAGES] 3
+
+=====PAGE 2=====
+Announcement
+• Midterm exam (papers + programming) will be on 23 Oct 26 
+• Location: TBC
+• There will be two parts
+• Written: MC and short question
+• Programming:  You can use your computer and agent coder
+• No communication is allowed
+2
+[IMAGES] 2
+
+=====PAGE 3=====
+Lecture Room
+Lecture
+Week
+Lecture Rooms
+L1
+11-Sept
+BMS G18
+L2
+18-Sept
+BMS G18
+L3
+25-Sept
+CYT LT1A
+L4
+2-Oct
+CYT LT1A
+L5
+9-Oct
+CYT LT1A
+L6
+16-Oct
+BMS G18
+L7 (Mid Term)
+23-Oct
+To be confirmed
+L8
+30-Oct
+CYT LT1A
+L9
+6-Nov
+UCC C1
+L10
+13-Nov
+CYT LT1A
+L11
+20-Nov
+UCC C1
+L12
+27-Nov
+UCC C1
+L13
+4-Dec
+UCC C1
+L14
+11-Dec
+UCC C1
+3
+[IMAGES] 2
+
+=====PAGE 4=====
+Last Lecture
+4
+What is STAT6207
+1. Learn the theory of machine learning and deep learning;
+2. Understand machine learning applications to solve real problems in generative 
+adversarial networks, large language model, etc.;
+3. Gain hands on experience through projects and activities using Python libraries, such as 
+PyTorch and Numpy, with projects
+4
+Theory
+Application
+Hands on
+• Using a straight line equation 
+as the separator.
+• Variables: �and �
+• Constants: �and �
+• On graph: 
+• �= gradient
+• �= y-axis intercept
+17
+�= ��+ �
+△�
+△�
+What is Machine Learning - Classification
+Training – following the slope
+30
+[IMAGES] 12
+
+=====PAGE 5=====
+Agenda
+• Linear classifier
+• Transfer Learning
+• Local Large Language Model
+5
+[IMAGES] 2
+
+=====PAGE 6=====
+Linear Algebra
+6
+• Matrix addition ( A + B = C)
+• Matrix element-wise multiplication (Hadamard product)
+[IMAGES] 3
+
+=====PAGE 7=====
+Linear Algebra
+• Inner product: measuring the similarity of 2 vectors
+7
+(𝑤1, 𝑤2, … , 𝑤𝑁)
+𝑥1
+…
+𝑥𝑁
+= 𝑤1𝑥1+ 𝑤2𝑥2+…+ 𝑤𝑁𝑥𝑁= σ𝑖=1
+𝑁
+𝑤𝑖𝑥𝑖
+𝑤
+Ԧ𝑥
+𝑖𝑛𝑛𝑒𝑟Ԧ𝑥, 𝑤= Ԧ𝑥𝑤cos(𝜃)
+Ԧ𝑥cos(𝜃)
+𝜃
+[IMAGES] 3
+
+=====PAGE 8=====
+• Using a straight line equation 
+as the separator.
+• Variables: 𝑥and 𝑦
+• Constants: 𝑚and 𝑐
+• On graph: 
+• 𝑚= gradient
+• 𝑐= y-axis intercept
+• How’s about higher dimension?
+8
+𝑦= 𝑚𝑥+ 𝑐
+△𝑦
+△𝑥
+Recall: What is Machine Learning - Classification
+[IMAGES] 3
+
+=====PAGE 9=====
+Linear Algebra
+9
+Input neurons
+Output
+weights
+r1
+r2
+rn
+ri
+𝑤1
+𝑤𝑛
+𝑤1
+𝑤2
+…
+𝑤𝑁
+𝑥1
+𝑥2
+⋮
+𝑥𝑁
+= 𝑤1𝑥1 + 𝑤2𝑥2 + ⋯+ 𝑤𝑁𝑥𝑁
+𝑤𝑖
+𝑤2
+…
+…
+[IMAGES] 2
+
+=====PAGE 10=====
+Examples of Linear  Classification 
+• Training set 𝒟= 𝐱𝑖, 𝑦𝑖𝑖=1
+𝑁, where 𝑦𝑖∈[0,1]
+• The defined model: 
+𝑝𝑦= 1 𝐱, 𝐰= 𝜎𝐰𝑇𝐱=
+1
+1 + exp −𝐰𝑇𝐱
+𝑝𝑦= 0 𝐱, 𝐰= 1 −𝜎𝐰𝑇𝐱=
+exp −𝐰𝑇𝐱
+1 + exp −𝐰𝑇𝐱
+• Consider the logit of 𝑝𝑦= 1 𝐱, 𝐰
+log
+𝑝𝑦= 1 𝐱, 𝐰
+1 −𝑝𝑦= 1 𝐱, 𝐰= log 𝑝𝑦= 1 𝐱, 𝐰
+𝑝𝑦= 0 𝐱, 𝐰= log exp 𝐰𝑇𝐱= 𝐰𝑇𝐱
+10
+[IMAGES] 2
+
+=====PAGE 11=====
+Classification: Decision Rule 
+• To Classify instances, we obtain a point estimation of y:
+• ොy=argmax p(y|x,w)
+• In other words, the rules is: ොy=1 iff p(y=1|x,w)>0
+• This is called the optimal Bayes classifier
+• e.g., ොy=1 iff 𝑤𝑇𝑥>0 as a linear classifier
+11
+[IMAGES] 3
+
+=====PAGE 12=====
+Decision Regions for Multi-classes
+• The feature space is divided into 𝐾decision 
+regions ℛ1, … , ℛ𝐾, where
+ℛ𝑖= 𝐱𝑔𝑖𝐱= max
+𝑘
+𝑔𝑘𝐱
+• The decision regions are separated by 
+decision boundaries where ties occur 
+among the largest discriminant functions.
+• Choose 𝐶𝑖if 𝑔𝑖𝐱= max
+𝑘
+𝑔𝑘(𝐱)
+12
+[IMAGES] 4
+
+=====PAGE 13=====
+13
+𝑦= 𝑚𝑥+ 𝑐
+△𝑦
+△𝑥
+Pre-train model (encoder)
+encode
+encode
+classifier
+[IMAGES] 7
+
+=====PAGE 14=====
+RGB
+14
+[IMAGES] 4
+
+=====PAGE 15=====
+Image Classification with Linear Classifier
+15
+Training is to find W such that f(x,W) gives the desired output, for 
+an input image, x
+[IMAGES] 3
+
+=====PAGE 16=====
+Image Classification with Linear Classifier
+16
+[IMAGES] 3
+
+=====PAGE 17=====
+Image Classification with Linear Classifier
+17
+e.g., W is m and c: f(x,y) = y-mx-c
+Assume m =1 c =-2 (deer classifier):
+f(1,1) = 1 –1*1 + 2= 2 > 0 -> above the line
+f(-5,0) = 0 -1*5 +2 = -3 < 0 -> below the line
+[IMAGES] 3
+
+=====PAGE 18=====
+Image Classification with Linear Classifier
+• m1, m2, m3, c1, c2, c3 for 3 lines
+• z01 =y-m1*x-c1
+• z02 =y-m2*x-c2
+• z03 =y-m3*x-c3 
+18
+[
+−𝑚1
+1
+−𝑚2
+1
+−𝑚3
+1
+][
+𝑥
+𝑦] +[
+−𝑐1
+−𝑐2
+−𝑐3
+] = [
+𝑧1
+𝑧2
+𝑧3
+]
+input
+W
+output
+bias
+[
+−𝑚1
+1
+−𝑚2
+1
+−𝑚3
+1
+][𝑥
+𝑦]+[
+−𝑐1
+−𝑐2
+−𝑐3
+] = [
+𝑧01
+𝑧02
+𝑧03
+]
+[IMAGES] 4
+
+=====PAGE 19=====
+Textual Data
+• neural network models for labelled data:
+𝑥𝑖,𝑦𝑖𝑖=1
+𝑁
+→𝑃(𝑦|𝑥)
+where each sample is an input xi and an output yi. 
+• Each training example consists of a sequence of inputs
+• (x(1), . . . , x(τi )) and a sequence of outputs (y(1), . . . , y(τi )),
+• (”How”, ”are”, ”you”, −, −, −), (−, −, −, ”I ”, ”am”, ”fine”).
+• Training data can be from dialogue or machinetranslation
+19
+[IMAGES] 3
+
+=====PAGE 20=====
+Textual Data: One Hot Vectors
+• a binary vector used to represent categorical /text data
+• Each category is represented by a unique index in the vector.
+• without any implicit relationships between categories.
+20
+[IMAGES] 3
+
+=====PAGE 21=====
+Agenda
+• Linear classifier
+• Transfer Learning
+• Local Large Language Model
+21
+[IMAGES] 2
+
+=====PAGE 22=====
+Summary so far
+• Data is represented as a point
+• Classification is to learn the equation
+• What if we don’t know how to represent 
+the data?
+22
+𝑦= 𝑚𝑥+ 𝑐
+△𝑦
+△𝑥
+[IMAGES] 3
+
+=====PAGE 23=====
+Transfer Learning
+• aims to leverage the learned knowledge from a resource-rich domain/task to 
+help learning a task with not sufficient training data. 
+23
+[IMAGES] 3
+
+=====PAGE 24=====
+Transfer Learning
+• The resource-rich domain is known as the source and the low-resource task 
+is known as the target.
+• Transfer learning works the best if the model features learned from the 
+source task are general (i.e., domain-independent)
+• e.g., trained from ImageNet
+24
+[IMAGES] 3
+
+=====PAGE 25=====
+Transfer Learning
+Image Processing: Learning flower classification system 
+• How much data can we have?
+Text Sentiment Analysis: Learning a sentiment on camera review
+• Need to label many camera reviews from scratch?
+• Can we use online datasets?
+What are source and target tasks/domain in the above examples?
+25
+[IMAGES] 3
+
+=====PAGE 26=====
+(Deep) Transfer Learning:
+aims to help improve the learning of the target predictive function 𝑓𝑇.
+in 𝐷𝑡
+using the knowledge in 𝐷𝑠and 𝒯𝑠, where 𝐷𝑠≠𝐷𝑡and/or 𝒯𝑠≠𝒯𝑡.
+• 𝒟𝑠and 𝒟𝑡denote the source and target domains
+• 𝒯𝑠and 𝒯𝑡be the source and target tasks
+• (Deep learning) Models can be pre-trained on one domain 
+26
+[IMAGES] 2
+
+=====PAGE 27=====
+The General-to-Specific Spectrum of Deep Learning
+• Deep networks learn hierarchical features. Early layers act as universal 
+feature detectors. Only the deepest layers specialize in the original training 
+task, making early layers highly transferable across domains
+27
+[IMAGES] 3
+
+=====PAGE 28=====
+Major types of Deep Transfer Learning
+• Representation-based: use a pre-trained model to encode data into a 
+representation
+• Model Sharing-based: Reuse part of a model that is pre-trained in the 
+source domain
+• Instance-based: Reuse the instances (samples) in source domain by 
+assigning appropriate weight to them
+28
+[IMAGES] 2
+
+=====PAGE 29=====
+Recall: First, you need a space
+• An algorithm depends on how “closeness” is defined
+• Changing the mathematical rules for measuring space fundamentally alters 
+which neighbors are considered closest
+29
+[IMAGES] 3
+
+=====PAGE 30=====
+Representation & Model-based
+• You can leverage a pre-trained model in two ways
+30
+[IMAGES] 3
+
+=====PAGE 31=====
+Representation-based Deep Transfer Learning
+• The pre-trained layers act as a fixed 
+feature map. Optimization is restricted 
+entirely to the newly initialized classifier 
+head.
+• Data Requirement: Optimal for very small 
+target datasets (< 1,000 samples).
+• Compute: Low memory footprint; 
+gradients are computed for the classifier 
+head only.
+31
+[IMAGES] 3
+
+=====PAGE 32=====
+Representation-based Deep Transfer Learning
+32
+New Feature Space
+Pre-trained (by others)
+Transferred
+[IMAGES] 3
+
+=====PAGE 33=====
+Representation-based Deep Transfer Learning
+• Use outputs of one or mare layers to train on another model
+33
+[IMAGES] 4
+
+=====PAGE 34=====
+Representation-based Deep Transfer Learning
+• It is also possible that the entire model is shared 
+and trained on source and target domains jointly.
+• 𝒳1 and 𝒴1: feature and label spaces for the 
+learning task in the source domain
+• 𝒳2 and 𝒴2: feature and label spaces for the 
+learning task in the target domain.
+• At the runtime, only the target domain is 
+concerned. 
+34
+[IMAGES] 3
+
+=====PAGE 35=====
+Representation-based Deep Transfer Learning
+The layers of a trained model can be treated as feature extractor to extract 
+high-level features from a new domain
+Approach:
+1. The target domain are encoded using the pre-trained encoder using source 
+domain
+2. Instances in the new feature space can be used as the training set of a new 
+neural network
+35
+[IMAGES] 2
+
+=====PAGE 36=====
+Representation-based Deep Transfer Learning
+• Using common items to learn a representation for all items
+36
+[IMAGES] 5
+
+=====PAGE 37=====
+Textual
+37
+Ref: Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference
+[IMAGES] 3
+
+=====PAGE 38=====
+Textual
+• ModernBERT supports up to 8,192 tokens, a significant increase from BERT's 
+512, enabling it to handle longer documents effectively.
+• It incorporates advanced techniques like Rotary Positional Embeddings and 
+GeGLU layers, enhancing performance and flexibility.
+• The model is optimized for speed and memory efficiency, making it practical 
+for real-world applications on common GPUs.
+38
+https://medium.com/@simeon.emanuilov/modernbert-a-modernized-bert-for-nlp-tasks-unfoldai-0ca2c66bc669
+[IMAGES] 2
+
+=====PAGE 39=====
+39
+[IMAGES] 4
+
+=====PAGE 40=====
+Text and audio
+40
+Ref: SONAR: Sentence-Level Multimodal and Language-Agnostic Representations
+Github: https://github.com/facebookresearch/SONAR
+[IMAGES] 5
+
+=====PAGE 41=====
+Images
+41
+Ref: Deep Residual Learning for Image Recognition
+[IMAGES] 4
+
+=====PAGE 42=====
+42
+[IMAGES] 4
+
+=====PAGE 43=====
+43
+𝑦= 𝑚𝑥+ 𝑐
+△𝑦
+△𝑥
+Pre-train model (encoder)
+encode
+encode
+classifier
+[IMAGES] 7
+
+=====PAGE 44=====
+Model Sharing-Based Deep Transfer Learning
+The layers of a trained model can be fine-tuned 
+Approach:
+1. Find or train a model in source domain with large-scale training dataset
+2. Part/all of the pre-trained network is reused in the architecture of the 
+model for target model
+3. Weights of the reused part can be updated through training on the target 
+domain (a.k.a. fine-tuning)
+44
+[IMAGES] 2
+
+=====PAGE 45=====
+The Paradigm Shift: Standing on the Shoulders of Giants
+• Instead of training from scratch, 
+transfer learning takes a model already 
+trained on a massive dataset (like 
+ImageNet for vision, or BERT for text) 
+and uses its learned features as a 
+starting point.
+• The Result: 80-90% reduction in 
+required training data and compute 
+costs. You bypass the phase of teaching 
+the network basic reality.
+45
+[IMAGES] 3
+
+=====PAGE 46=====
+Model Sharing-Based Deep Transfer Learning
+46
+trained from ImageNet 
+trained from your data 
+Model
+[IMAGES] 4
+
+=====PAGE 47=====
+47
+Others
+ImageNet
+[IMAGES] 3
+
+=====PAGE 48=====
+48
+𝑦= 𝑚𝑥+ 𝑐
+△𝑦
+△𝑥
+classifier
+Note: all 3 method can be applied together
+[IMAGES] 6
+
+=====PAGE 49=====
+Partial and Full Fine-Tuning
+• Definition: Unfreezing some or all of the 
+deeper pre-trained layers to actively adapt 
+the pre-trained weights to a new domain.
+• Data Requirement: Requires a larger dataset 
+(1,000 to 50,000 samples) to prevent 
+overfitting.
+• Compute: Medium to high memory 
+footprint; requires gradient computation 
+across the unfrozen backbone.
+49
+[IMAGES] 3
+
+=====PAGE 50=====
+The Architectural Decision Matrix
+Criterion
+Feature Extraction
+Fine-Tuning
+Train From Scratch
+Target Data Volume
+< 1,000 samples
+1,000 to 50,000 samples
+> 50,000 samples
+Domain Similarity
+High semantic overlap
+Moderate to low similarity
+Very low or unrelated
+Overfitting Risk
+Minimal
+Medium to High
+High
+GPU Memory Footprint
+Low
+Medium to High
+Maximum
+50
+[IMAGES] 2
+
+=====PAGE 51=====
+Many pre-train models
+• https://modelzoo.co/
+• https://www.tensorflow.org/resources/models-datasets
+• https://pytorch.org/hub/
+• https://paperswithcode.com/
+• Or you can search from google direct
+51
+[IMAGES] 2
+
+=====PAGE 52=====
+Instance-based Deep Transfer Learning
+• Instances shown in light blue in the source domain are not similar to the 
+target domain and therefore are excluded from the training dataset
+• Similar instances in the source domain (dark blue) are included in the 
+training dataset with appropriate weights
+52
+[IMAGES] 3
+
+=====PAGE 53=====
+Instance-based Deep Transfer Learning
+• Reweight the samples in the source domain to correct for marginal 
+distribution differences
+• Use only the relevant information from the source domain
+• Work best when the conditional distribution is the same in both domains.
+• Methods
+1. finds and applies the weight that matches up the mean of the target and source 
+domains. 
+2. train a binary classifier to separate source samples from target samples that the 
+output is the sample weights
+53
+[IMAGES] 2
+
+=====PAGE 54=====
+Instance-based Deep Transfer Learning
+‘Some’ samples in the source domain can be utilized in the target domain with 
+appropriate weights.
+Approach:
+1. Filtering out the samples that are not similar to the target.
+2. Re-weighting instances in source domain to obtain a distribution similar to 
+target domain.
+3. Training a deep neural network on the collection of re-weighted instances 
+as well as labeled instances (if any) in the target domain.
+54
+[IMAGES] 2
+
+=====PAGE 55=====
+Instance-based Deep Transfer Learning
+55
+[IMAGES] 3
+
+=====PAGE 56=====
+Many open datasets
+• https://datasetsearch.research.google.com/
+56
+[IMAGES] 3
+
+=====PAGE 57=====
+Instance-based Deep Transfer Learning
+57
+ImageNet 
+Your small dataset
+[IMAGES] 4
+
+=====PAGE 58=====
+LLM-based: Dataset Generation
+58
+Ref: InPars: Unsupervised Dataset Generation for Information Retrieval
+[IMAGES] 4
+
+=====PAGE 59=====
+LLM-based: Text Data Augmentation 
+59
+Ref: AugGPT: Leveraging ChatGPT for Text Data Augmentation 
+[IMAGES] 3
+
+=====PAGE 60=====
+LLM-based: Generate Triplet samples
+60
+Ref: Improving Text Embeddings with Large Language Models 
+[IMAGES] 4
+
+=====PAGE 61=====
+LLM-based: Tagging/generate data
+61
+Ref: Is GPT-3 a Good Data Annotator?
+[IMAGES] 6
+
+=====PAGE 62=====
+LLM-based: Tagging/generate data
+62
+Ref: Is GPT-3 a Good Data Annotator?
+[IMAGES] 6
+
+=====PAGE 63=====
+Data Augmentations
+63
+[IMAGES] 3
+
+=====PAGE 64=====
+LLM-based: Tagging/generate data
+• Adding extra data points
+64
+𝑦= 𝑚𝑥+ 𝑐
+△𝑦
+△𝑥
+[IMAGES] 3
+
+=====PAGE 65=====
+65
+𝑦= 𝑚𝑥+ 𝑐
+△𝑦
+△𝑥
+Pre-train model (encoder)
+encode
+encode
+classifier
+[IMAGES] 7
+
+=====PAGE 66=====
+Agenda
+• Linear classifier
+• Transfer Learning
+• Local Large Language Model
+66
+[IMAGES] 2
+
+=====PAGE 67=====
+What is Large Language Model
+• What they are: LLMs are advanced AI programs trained on massive datasets 
+of text and code to understand, generate, and translate human-like 
+language.
+• How they work: Built on transformer architecture, they function as 
+powerful prediction machines that analyze context to guess the most 
+mathematically probable next word or token.
+• Normally hosted by big tech giants, can called with API
+67
+[IMAGES] 2
+
+=====PAGE 68=====
+Why Local LLMs?
+• Privacy: You can prompt local LLMs in a multi-turn manner without your 
+prompt data leaving your localhost. 
+• Support and Security: similar support and security as OpenAI or Claude. 
+• Offline Support: Use LLM while offline.
+68
+ref: https://medium.com/@amosgyamfi/the-6-best-llm-tools-to-run-models-locally-eedd0f7c2bbd
+[IMAGES] 4
+
+=====PAGE 69=====
+Why Use Local LLMs?
+• Customization Options: Local LLMs provide advanced configurations for CPU 
+threads, temperature, context length, GPU settings, and more. 
+• Subscription and Cost: These tools are free to use a to save money
+69
+ref: https://medium.com/@amosgyamfi/the-6-best-llm-tools-to-run-models-locally-eedd0f7c2bbd
+[IMAGES] 3
+
+=====PAGE 70=====
+How to Use Local LLMs?
+• software-based: Jan/Llamafile / LM Studio and more
+70
+[IMAGES] 4
+
+=====PAGE 71=====
+How to Use Local LLMs?
+• Code-based: 
+71
+[IMAGES] 4
+
+=====PAGE 72=====
+How to use HuggingFace with Transformers (Local Models)
+72
+[IMAGES] 3
+
+=====PAGE 73=====
+Other options: Ollama
+73
+[IMAGES] 4
+
+=====PAGE 74=====
+Compute & Memory Requirements
+• Memory Required (GB) = (Number of Parameters × Quantization Bits ÷ 8) +  
+2 GB (allocated for Context Window/KV Cache)
+• Compute needs scale with parameter size
+• FLOPs per token: ≈ 2P (P = parameters)
+• 7B models:∼14B FLOPs/token
+• 70B models:∼140B FLOPs/token
+74
+[IMAGES] 2
+
+=====PAGE 75=====
+Model Size
+Common Models (4-bit 
+Quantized)
+Minimum 
+VRAM 
+Recommended Hardware Setup
+Performance 
+Expectations
+<4B
+• Gemma 4 (E2B / E4B)
+• Qwen 3 (0.6B / 1.7B)
+• Phi-4 Mini (3.8B)
+• SmolLM2 (1.7B)
+4 GB –
+6 GB
+• Intel/AMD Integrated Graphics
+• NVIDIA GTX 1060 / RTX 3050
+• Base Apple M-series Mac (8GB RAM)
+Ultra-fast text generation 
+and lightweight tasks. 
+Easily runs on basic 
+laptops, modern 
+handhelds, and edge 
+devices with native 
+audio/image capabilities.
+7B- 9B
+• Llama 4 Scout (11B)
+• Qwen 3 (8B / 14B)
+• Phi-4 Reasoning-Vision 
+(15B)
+• Gemma 3 (12B)
+6 GB –
+10 GB
+• NVIDIA RTX 3060 (12GB) / 4060
+• AMD Radeon RX 6700
+• Apple Mac with 16GB+ Unified Memory
+Exceptional speed and 
+intelligence ratio. Serves 
+as the sweet spot for 
+consumer gaming 
+hardware, handling 
+complex instructions, 
+agentic tool use, and 
+multimodal processing.
+75
+[IMAGES] 2
+
+=====PAGE 76=====
+Model Size
+Common Models (4-bit 
+Quantized)
+Minimum 
+VRAM 
+Recommended Hardware Setup
+Performance 
+Expectations
+14B - 32B
+• Gemma 4 (26B A4B 
+MoE / 31B Dense)
+• Qwen 3.8 (27B)
+• Qwen 3 (32B)
+• Command R (35B)
+12 GB – 24 
+GB
+• NVIDIA RTX 4070 Ti Super (16GB)
+• NVIDIA RTX 3090 / 4090 (24GB)
+• Apple Mac with 24GB or 36GB Memory
+Near-instantaneous 
+responses on single 24GB 
+GPUs. Provides deep 
+mathematical reasoning, 
+vision-language context, 
+advanced coding 
+capabilities, and dynamic 
+thinking modes.
+70B+
+• DeepSeek-V4-Flash 
+(284B MoE / ~13B Active)
+• DeepSeek-V4-Pro (1.6T 
+MoE / ~49B Active)
+• Kimi K3 (2.8T MoE)
+• Llama 4 Maverick (MoE) 
+/ Qwen 3.8-Max
+40 GB – 128 
+GB+ (GGUF/q
+uantized MoE
+offloading)
+• Dual NVIDIA RTX 3090 / 4090 (48GB)
+• Workstation Rig (1× A100/H100 or RTX 6000 Ada)
+• Mac Studio / Pro (64GB to 192GB+ Unified 
+Memory)
+Frontier-class reasoning, 
+million-token context 
+windows, and 
+commercial-grade tool-
+use capabilities. Requires 
+multi-GPU setups, 
+workstation cards, or 
+high-capacity Apple 
+Silicon.
+76
+[IMAGES] 2
+
+=====PAGE 77=====
+Latency vs Throughput
+• Smaller models: Lower latency, suitable for real-time tasks
+• Larger models: Higher throughput, better for batch processing
+• Mistral’s SWA and DeepSeek’s MLA improve eﬃciency
+77
+[IMAGES] 3
+
+=====PAGE 78=====
+GPT-OSS (20B): OpenAI’s Reasoning Powerhouse
+• Strengths:
+• Exceptional on complex reasoning, math, and multi-step logic.
+• Outperforms other open models of similar size on challenging benchmarks like AIME.
+• Can use tools: code execution, web browsing, and document search.
+• Open license allows fine-tuning and commercial use.
+• Weaknesses:
+• Less reliable for trivia, pop culture, and basic fact recall.
+• Not the strongest pure coding model better at reasoning about code than generating 
+it flawlessly.
+78
+[IMAGES] 2
+
+=====PAGE 79=====
+Gemma 4 (E2B / E4B / 12B / 26B / 31B) — The Open Agentic Powerhouse
+• Strengths:
+• Native Multimodality: Offers built-in text, image, video, and native audio support (12B and smaller).
+• Encoder-Free Architecture: The 12B variant feeds vision/audio directly into the LLM loop, saving 
+memory and latency.
+• Agentic Reasoning: Native <|think|> loop triggers massive gains in multi-step planning, coding, and 
+math.
+• Fast Local Speeds: Ships with Multi-Token Prediction (MTP) drafters out of the box for accelerated local 
+inference.
+• Weaknesses:
+• Overly Strict Guardrails: Highly prone to false-positive refusals on harmless or ambiguous edge-case 
+prompts.
+• Modality Sensitivity: Requires strict, rigid prompt formatting (e.g., visuals before text) to prevent 
+instruction drift.
+• High MoE Memory Footprint: The 26B Mixture-of-Experts variant requires loading all 25B+ parameters 
+into memory despite only routing ~3.8B per token
+79
+[IMAGES] 2
+
+=====PAGE 80=====
+Qwen 3.6 (27B / 35B-A3B) — Next-Gen Agent & Thinking Powerhouse
+• Strengths:
+• Agentic Coding Leader: Heavily optimized for repository-level reasoning and front-end development 
+workflows, excelling at complex coding challenges (e.g., scoring highly on SWE-bench Verified).  
+• Thinking Preservation: Features a dedicated mechanism to retain and pass reasoning/chain-of-thought 
+context seamlessly across multi-turn historical messages, making iterative debugging and development 
+highly efficient.  
+• Efficient MoE Architecture: The 35B-A3B variant utilizes a sparse Mixture-of-Experts routing system, enabling 
+lightning-fast inference throughput and minimal compute overhead compared to traditional dense models.  
+• Massive Context & Multilingual Reach: Native support for an expanded 256K context window and 
+comprehensive coverage across 201 distinct languages and regional dialects.
+• Weaknesses:
+• Thinking Overhead: Preserving detailed internal chain-of-thought context over massive chat histories 
+requires careful memory management, which can increase VRAM consumption during long development 
+sessions.
+• Architecture Complexity: Transitioning between dense (27B) and MoE architectures (35B-A3B) means users 
+must optimize separate local quantization strategies (like Unsloth Dynamic GGUFs) to maintain peek local 
+performance.
+80
+[IMAGES] 2
+
+=====PAGE 81=====
+Qwen3-VL (8B / 32B / 235B-A22B) — Advanced Multimodal & Spatial Vision Leader
+• Strengths:
+• Visual Reasoning: Features "Thinking" editions that use internal step-by-step reasoning and dynamic 
+image-zooming tools to analyze fine-grained details.
+• Spatial 3D Grounding: Supports precise 3D object bounding for indoor and outdoor environments, 
+making it ideal for robotics and embodied AI.
+• GUI Agent Automation: Optimized for desktop and mobile screen navigation, accurately mapping 
+coordinates to execute autonomous workflows.
+• Massive Video Context: Handles a 256K context window (expandable to 1M) for interleaved text, 
+images, and long-horizon video tracking.
+• Advanced OCR & Math: Uses deep feature fusion to deliver top-tier multi-language text extraction and 
+visual-math reasoning.
+• Weaknesses:
+• High Compute Demands: The flagship 235B MoE variant requires massive GPU infrastructure and 
+specialized quantization to run locally.
+• VRAM Overhead: Real-time tracking of long, second-level video metadata rapidly consumes memory 
+during long-sequence inference.
+81
+[IMAGES] 2
+
+=====PAGE 82=====
+How do you select a model?
+82
+ref: https://artificialanalysis.ai/leaderboards/models
+[IMAGES] 3
+
+=====PAGE 83=====
+Demo
+• Using Ollama
+• Calling LLM with Ollama with Python
+• Output the full history as part of the grading
+83
+[IMAGES] 3
+
+=====PAGE 84=====
+Tasks: Build an image classification using OpenCode
+• Basic Tasks (50%)
+1.
+Download a set of images and encode them using pre-trained ResNet model
+•
+At least 100 cat images and 100 dog images
+2.
+Find and visualize the top 5 most similar and dissimilar images, for a given query image
+3.
+Build a KNN classifier using the dataset
+4.
+Visualize the performance using 10 unseen images, visualize failed cases
+5.
+Build a website to show the results
+• Advance (50%)
+1.
+Implement and compare 3 different encoding models
+2.
+Implement and compare 3 different distance calculations in L1
+3.
+Analyze their strength and weakness using the results, and explain using the knowledge from STAT6207
+• Expected outcomes and notes:
+• Submit your works to blackboard by Wednesday (23 Sep 26)
+• Make a report in pdf to explain your results and the decision while using OpenCode
+• Submit your session transcript, .py, pdf, the website and etc.
+84
+[IMAGES] 2
+
+=====PAGE 85=====
+Questions?
+Email: pakmingcheung@cuhk.edu.hk
+[IMAGES] 2
